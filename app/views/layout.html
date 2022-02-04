@@ -33,10 +33,11 @@
 
 {% block head %}
   {% include "includes/head.html" %}
+
 {% endblock %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  GOV.UK
 {% endblock %}
 
 {% block header %}
@@ -47,6 +48,15 @@
     serviceUrl: "/",
     containerClasses: "govuk-width-container"
   }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
