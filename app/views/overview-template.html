@@ -1,0 +1,151 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+{% endblock %}
+
+{% block content %}
+      <!-- Heading and progress bar -->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h1 class="govuk-heading-xl" style="margin-bottom: 2px;">Claimant vs Respondent</h1>
+          <p class="govuk-body">Claim reference: 12345678/1234</p>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+          <hr class="overview-border">
+
+          <div class="hmcts-progress-bar govuk-!-margin-top-5" style="margin-left: -35px;">
+            <ol class="hmcts-progress-bar__list">
+              <li class="hmcts-progress-bar__list-item">
+                <span class="hmcts-progress-bar__icon--complete"></span>
+                <span class="hmcts-progress-bar__label">ET1 claim submitted</span>
+              </li>
+
+              <li class="hmcts-progress-bar__list-item">
+                <span class="hmcts-progress-bar__icon--complete"></span>
+                <span class="hmcts-progress-bar__label">Respondent response</span>
+              </li>
+
+              <li class="hmcts-progress-bar__list-item" aria-current="step">
+                <span class="hmcts-progress-bar__icon"></span>
+                <span class="hmcts-progress-bar__label">Case listed</span>
+              </li>
+
+              <li class="hmcts-progress-bar__list-item">
+                <span class="hmcts-progress-bar__icon"></span>
+                <span class="hmcts-progress-bar__label">Preliminary hearing</span>
+              </li>
+
+              <li class="hmcts-progress-bar__list-item">
+                <span class="hmcts-progress-bar__icon"></span>
+                <span class="hmcts-progress-bar__label">Final hearing</span>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Main body -->
+          <h1 class="govuk-heading-m">Do this next</h1>
+          <div class="action-panel">
+            <p class="govuk-body">
+              A date has been booked for your hearing.<br><br>
+              Here are the details:<br><br>
+
+              <b>Date</b>: 4 May 2022<br>
+              <b>Time</b>: 10am<br>
+              <b>Location</b>: Taylor House<br><br>
+
+              Your Notice of Hearing is now available to view. It includes more information about the court hearing, including the hearing centre address.<br>
+
+              <h4 class="govuk-heading-s">Useful documents</h4>
+              <a class="govuk-body govuk-link" href="#">Notice of hearing</a>
+
+              <h4 class="govuk-heading-s govuk-!-margin-top-5">Helpful information</h4>
+              <a class="govuk-body govuk-link" href="#">What to expect at a hearing</a>
+          </div>
+
+          <div class="completed-items govuk-!-margin-top-5">
+            <h5 class="govuk-heading-m">Completed</h4>
+              <div>
+                <span class="completed-task"></span>
+
+                <h6 class="govuk-heading-s completed-task-label">Your hearing details</h6>
+                  <p class="govuk-body completed-task-body"><b>29 February 2022</b> - Hearing listed</p>
+
+                <h7 class="govuk-heading-s completed-task-body">Useful documents</h7>
+                  <a class="govuk-body govuk-link completed-task-body" href="#">Notice of hearing</a>
+
+                <hr class="completed-section-border">
+              </div>
+
+              <div>
+                <span class="completed-task"></span>
+
+                <h6 class="govuk-heading-s completed-task-label">The respondent replied to the claim</h6>
+                  <p class="govuk-body completed-task-body"><b>25 February 2022</b> - Response received</p>
+
+                <h7 class="govuk-heading-s completed-task-body">Useful documents</h7>
+                  <a class="govuk-body govuk-link completed-task-body" href="#">ET3 form</a>
+
+                <hr class="completed-section-border">
+              </div>
+
+              <div>
+                <span class="completed-task"></span>
+
+                <h6 class="govuk-heading-s completed-task-label">Your ET1 form was submitted</h6>
+                  <p class="govuk-body completed-task-body"><b>25 January 2022</b> - Form received</p>
+
+                <h7 class="govuk-heading-s completed-task-body">Useful documents</h7>
+                  <a class="govuk-body govuk-link completed-task-body" href="#">ET1 form</a>
+
+                <hr class="completed-section-border">
+              </div>
+
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <div class="govuk-grid-column-one-third">
+          <div>
+            <hr class="overview-border">
+            <h2 class="govuk-heading-s">I want to...</h2>
+              <p class="govuk-body">
+                <a href="#">Amend personal details</a><br>
+                <a href="#">Postpone a hearing</a><br>
+                <a href="#">Amend my claim</a><br>
+              </p>
+          </div>
+
+          <div>
+            <hr class="section-border">
+            <h3 class="govuk-heading-s govuk-!-margin-top-3">Contact us for help</h2>
+              <p class="govuk-body">Ask a question or get help in your language. <br><br>
+                Telephone: <br>
+                0300 123 1024<br>
+                0300 303 5176 (Welsh language)<br>
+                0300 790 6234 (Scotland)<br><br>
+                Textphone:<br>
+                18001 0300 123 1024 (England and Wales)<br>
+                18001 0300 790 6234 (Scotland)<br><br>
+                Monday to Friday, 9am to 5pm <br><br>
+                <a href="#"> Find out about call charges (opens in a new window)</a>
+
+              </p>
+          </div>
+        </div>
+      </div>
+
+
+{% endblock %}

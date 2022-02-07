@@ -16,3 +16,93 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.overview-border {
+  height: 4px;
+  background: #1E6FB8;
+  border: none;
+}
+
+.section-border {
+  height: 3px;
+  background: #b1b4b6;
+  border: none;
+}
+
+.completed-section-border {
+  height: 2px;
+  background: #b1b4b6;
+  border: none;
+  margin-top: 25px;
+}
+
+.action-panel {
+  background: #F2F8F5;
+  padding: 20px;
+}
+
+// Styling the existing HMCTS progress bar; updating to match IAC
+.hmcts-progress-bar__list::before {
+    border-top: 3px solid #b1b4b6;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 13px;
+    width: 100%;
+}
+
+.hmcts-progress-bar__icon--complete {
+    position: relative;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: block;
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 32px;
+    background: url(/public/images/icon-progress-tick.svg);
+    background-size: 70%;
+    background-color: #1E6FB8;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.hmcts-progress-bar__icon {
+    position: relative;
+    background-color: #ffffff;
+    border: 2px solid #b1b4b6;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: block;
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 32px;
+}
+
+// Completed section items
+.completed-task {
+    position: left;
+    border-radius: 50%;
+    display: block;
+    height: 32px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 32px;
+    background: url(/public/images/icon-progress-tick.svg);
+    background-size: 70%;
+    background-color: #1E6FB8;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.completed-task-label {
+  position: right;
+  padding-left: 50px;
+  margin-top: -25px;
+}
+
+.completed-task-body {
+  position: right;
+  padding-left: 50px;
+}
