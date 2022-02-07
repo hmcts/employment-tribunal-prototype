@@ -23,9 +23,27 @@ $govuk-assets-path: '/govuk/assets/';
   border: none;
 }
 
+.section-border {
+  height: 3px;
+  background: #b1b4b6;
+  border: none;
+}
+
+.completed-section-border {
+  height: 2px;
+  background: #b1b4b6;
+  border: none;
+  margin-top: 25px;
+}
+
+.action-panel {
+  background: #F2F8F5;
+  padding: 20px;
+}
+
 // Styling the existing HMCTS progress bar; updating to match IAC
 .hmcts-progress-bar__list::before {
-    border-top: 6px solid #b1b4b6;
+    border-top: 3px solid #b1b4b6;
     content: "";
     left: 0;
     position: absolute;
@@ -42,7 +60,9 @@ $govuk-assets-path: '/govuk/assets/';
     margin-left: auto;
     margin-right: auto;
     width: 32px;
-    background: url(/hmcts-assets/images/icon-progress-tick.svg), #1E6FB8;;
+    background: url(/public/images/icon-progress-tick.svg);
+    background-size: 70%;
+    background-color: #1E6FB8;
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }
@@ -58,4 +78,31 @@ $govuk-assets-path: '/govuk/assets/';
     margin-left: auto;
     margin-right: auto;
     width: 32px;
+}
+
+// Completed section items
+.completed-task {
+    position: left;
+    border-radius: 50%;
+    display: block;
+    height: 32px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 32px;
+    background: url(/public/images/icon-progress-tick.svg);
+    background-size: 70%;
+    background-color: #1E6FB8;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.completed-task-label {
+  position: right;
+  padding-left: 50px;
+  margin-top: -25px;
+}
+
+.completed-task-body {
+  position: right;
+  padding-left: 50px;
 }
