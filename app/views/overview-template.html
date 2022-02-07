@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h1 class="govuk-heading-xl" style="margin-bottom: 2px;">Case name</h1>
+          <p class="govuk-body">Claim reference: 12345678/1234</p>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+          <hr class="overview-border">
+
+          <div class="hmcts-progress-bar govuk-!-margin-top-5" style="margin-left: -35px;">
+            <ol class="hmcts-progress-bar__list">
+            <li class="hmcts-progress-bar__list-item">
+              <span class="hmcts-progress-bar__icon--complete"></span>
+              <span class="hmcts-progress-bar__label">ET1 claim submitted</span>
+            </li>
+
+            <li class="hmcts-progress-bar__list-item" aria-current="step">
+              <span class="hmcts-progress-bar__icon"></span>
+              <span class="hmcts-progress-bar__label">Respondent response</span>
+            </li>
+
+            <li class="hmcts-progress-bar__list-item">
+              <span class="hmcts-progress-bar__icon"></span>
+              <span class="hmcts-progress-bar__label">Case listed</span>
+            </li>
+
+            <li class="hmcts-progress-bar__list-item">
+              <span class="hmcts-progress-bar__icon"></span>
+              <span class="hmcts-progress-bar__label">Preliminary hearing</span>
+            </li>
+
+            <li class="hmcts-progress-bar__list-item">
+              <span class="hmcts-progress-bar__icon"></span>
+              <span class="hmcts-progress-bar__label">Final hearing</span>
+            </li>
+
+            </ol>
+          </div>
+
+          <h1 class="govuk-heading-xl">Two-thirds column</h1>
+          <p class="govuk-body">This is a paragraph inside a two-thirds wide column</p>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <hr class="overview-border">
+          <h2 class="govuk-heading-m">One-third column</h2>
+          <p class="govuk-body">This is a paragraph inside a one-third wide column</p>
+        </div>
+      </div>
+
+
+{% endblock %}
