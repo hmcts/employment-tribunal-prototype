@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/research-220217/amend/1-what"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form action="3-why" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Order the other party to do something</span>
+            <h1 class="govuk-heading-l">
+              What is the information you wish to be provided?
+            </h1>
+          </legend>
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Contact us for help
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Ask a question or get help in your language. <br><br>
+              Telephone: <br>
+              0300 123 1024<br>
+              0300 303 5176 (Welsh language)<br>
+              0300 790 6234 (Scotland)<br><br>
+              Textphone:<br>
+              18001 0300 123 1024 (England and Wales)<br>
+              18001 0300 790 6234 (Scotland)<br><br>
+              Monday to Friday, 9am to 5pm <br><br>
+              <a href="#"> Find out about call charges (opens in a new window)</a>
+          </div>
+      </details>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

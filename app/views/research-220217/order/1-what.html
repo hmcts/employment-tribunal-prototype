@@ -1,0 +1,121 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/research-220217/overview"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form action="/what-do-you-want-answer" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Order the other party to do something</span>
+            <h1 class="govuk-heading-l">
+              What do you want to request from the other party?
+            </h1>
+          </legend>
+
+          <p class="govuk-body">You can request that the other party provides information. This does not need to relate to a case management order.</p>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What is a case management order?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              A case management order is an instruction from the Employment Tribunal for you to do something by a certain date. These orders can include tasks such as:
+              <br><br>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>providing a Schedule of Loss</li>
+                <li>disclosure of documents</li>
+                <li>creating a bundle of documents</li>
+                <li>exchanging witness statements</li>
+              </ul>
+            </div>
+          </details>
+
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="what-do-you-want" name="what-do-you-want" type="radio" value="provide-information">
+                <label class="govuk-label govuk-radios__label" for="what-do-you-want">
+                  Provide information
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="what-do-you-want-2" name="what-do-you-want" type="radio" value="provide-documents">
+                <label class="govuk-label govuk-radios__label" for="what-do-you-want-2">
+                  Provide documents
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="what-do-you-want-3" name="what-do-you-want" type="radio" value="comply">
+                <label class="govuk-label govuk-radios__label" for="what-do-you-want-3">
+                  Comply with an order given to them by the tribunal
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="what-do-you-want-4" name="what-do-you-want" type="radio" value="something-else">
+                <label class="govuk-label govuk-radios__label" for="what-do-you-want-4">
+                  Something else
+                </label>
+                <div id="what-do-you-want-4-hint" class="govuk-hint govuk-radios__hint">
+                  for example, non-compliance or general requests
+                </div>
+              </div>
+            </div>
+
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+      <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Contact us for help
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Ask a question or get help in your language. <br><br>
+              Telephone: <br>
+              0300 123 1024<br>
+              0300 303 5176 (Welsh language)<br>
+              0300 790 6234 (Scotland)<br><br>
+              Textphone:<br>
+              18001 0300 123 1024 (England and Wales)<br>
+              18001 0300 790 6234 (Scotland)<br><br>
+              Monday to Friday, 9am to 5pm <br><br>
+              <a href="#"> Find out about call charges (opens in a new window)</a>
+          </div>
+      </details>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

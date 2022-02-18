@@ -1,0 +1,131 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/research-220217/order/4-have-you-told"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form action="6-submitted" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Order the other party to do something</span>
+            <h1 class="govuk-heading-l">
+              Check your answers before submitting your request
+            </h1>
+          </legend>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What do you want the other party to do?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Information
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="1-what">
+                  Change<span class="govuk-visually-hidden"> what</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What is the information you wish to be provided?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                I want my HR information
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="2-provide-information">
+                  Change<span class="govuk-visually-hidden"> thing</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Why is this relevant to your case?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Because
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="3-why">
+                  Change<span class="govuk-visually-hidden"> why</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Have you asked for this information to be provided on a voluntary basis?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="4-have-you-told">
+                  Change<span class="govuk-visually-hidden"> have you</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <p class="govuk-body">
+            Upon submission, the other party will be notified of your request and will be given 7 days to respond.
+            <br><br>
+            If they respond then you will be notified of their response.
+            <br><br>
+            If after 7 days they haven’t responded then the tribunal will be notified of your request.
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Submit request
+      </button>
+
+      <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Contact us for help
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Ask a question or get help in your language. <br><br>
+              Telephone: <br>
+              0300 123 1024<br>
+              0300 303 5176 (Welsh language)<br>
+              0300 790 6234 (Scotland)<br><br>
+              Textphone:<br>
+              18001 0300 123 1024 (England and Wales)<br>
+              18001 0300 790 6234 (Scotland)<br><br>
+              Monday to Friday, 9am to 5pm <br><br>
+              <a href="#"> Find out about call charges (opens in a new window)</a>
+          </div>
+      </details>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+    <form action="/research-220217/overview" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Your request has been sent to the tribunal
+            </h1>
+          </div>
+
+
+          <!-- some crude CSS just to make this look right quickly for UR -->
+          <div class="govuk-grid-column-two-thirds" style="margin-left: -10px;">
+            <h2 class="govuk-heading-m">What happens next</h2>
+            <p class="govuk-body">A judge or legal officer will decide whether to order the other party to do what you have asked. You will be advised of the decision. </p>
+
+          </div>
+
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Back to case overview
+      </button>
+
+      <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Contact us for help
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Ask a question or get help in your language. <br><br>
+              Telephone: <br>
+              0300 123 1024<br>
+              0300 303 5176 (Welsh language)<br>
+              0300 790 6234 (Scotland)<br><br>
+              Textphone:<br>
+              18001 0300 123 1024 (England and Wales)<br>
+              18001 0300 790 6234 (Scotland)<br><br>
+              Monday to Friday, 9am to 5pm <br><br>
+              <a href="#"> Find out about call charges (opens in a new window)</a>
+          </div>
+      </details>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

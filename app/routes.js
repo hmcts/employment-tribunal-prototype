@@ -21,4 +21,20 @@ const path = require('path')
 
   })
 
+  router.post('/what-do-you-want-answer', function (req, res) {
+
+  var answer = req.session.data['what-do-you-want']
+
+  if (answer == "provide-information"){
+    res.redirect('/research-220217/order/2-provide-information')
+  }  if (answer == "provide-documents"){
+      res.redirect('/research-220217/order/2-provide-documents')
+    } if (answer == "comply"){
+        res.redirect('/research-220217/order/2-comply')
+      } if (answer == "something-else"){
+          res.redirect('/research-220217/order/2-something-else')
+        }
+
+  })
+
 module.exports = router
