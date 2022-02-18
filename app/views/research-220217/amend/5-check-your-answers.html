@@ -1,0 +1,130 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/research-220217/amend/4-have-you-told"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form action="6-submitted" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Amend the claim</span>
+            <h1 class="govuk-heading-l">
+              Check your answers before submitting your request
+            </h1>
+          </legend>
+
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What do you want to amend in your claim?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                I want to add a gender
+                discrimination claim on
+                top of my original claim
+                of unfair dismissal.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="1-how">
+                  Change<span class="govuk-visually-hidden"> how</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you wish to add another respondent?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="2-do-you-wish">
+                  Change<span class="govuk-visually-hidden"> respondent</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Why would it be fair to grant this amendement?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Because I was nervous to add
+                to my original claim but it’s true.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="3-why">
+                  Change<span class="govuk-visually-hidden"> why</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Have you already asked the other parties whether they agree to your amendment?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Yes - They do not want
+                to accept the added claim
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link govuk-link--no-visited-state" href="4-have-you-told">
+                  Change<span class="govuk-visually-hidden"> why</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Submit request
+      </button>
+
+      <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Contact us for help
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Ask a question or get help in your language. <br><br>
+              Telephone: <br>
+              0300 123 1024<br>
+              0300 303 5176 (Welsh language)<br>
+              0300 790 6234 (Scotland)<br><br>
+              Textphone:<br>
+              18001 0300 123 1024 (England and Wales)<br>
+              18001 0300 790 6234 (Scotland)<br><br>
+              Monday to Friday, 9am to 5pm <br><br>
+              <a href="#"> Find out about call charges (opens in a new window)</a>
+          </div>
+      </details>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

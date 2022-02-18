@@ -1,0 +1,94 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/research-220217/overview"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form action="2-do-you-wish" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Amend the claim</span>
+            <h1 class="govuk-heading-l">
+              How do you want to amend your claim?
+            </h1>
+          </legend>
+
+          <p class="govuk-body">You can ask for the tribunal’s permission to amend your claim. This could be adding, removing or changing important details such as:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>the people or organisations you’re claiming against</li>
+              <li>the types of claim you are bringing</li>
+              <li>the facts on which your claim or claims are based</li>
+              <li>the remedy you are asking the tribunal to award</li>
+            </ul>
+            <p class="govuk-body">If you wish to add another respondent (person or organisation) you can do that at the next step.
+            <br><br>
+            Your original claim details and other guidance can be found in your <a class="govuk-link--no-visited-state" href="https://i5kh8b.axshare.com/check_your_answers.html">case documents (opens in a new window)</a>.</p>
+
+            <!-- Once again, crude inline CSS -->
+            <div style="background-color: #f3f2f1; padding: 20px; margin-bottom: 20px;">
+              <h2 class="govuk-heading-s">How to answer this question</h2>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Explain the words you wish to remove or change. If it is easier, you can upload a separate document showing the changes you want to make. If you do that, then show the ‘tracked changes’ if you can.</li>
+              </ul>
+            </div>
+              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="8" aria-describedby="more-detail-hint"></textarea>
+
+              <label class="govuk-label" for="file-upload-2">Upload a file to support your amendment if necessary (optional)</label>
+              <input class="govuk-file-upload" id="file-upload-2" name="file-upload-2" type="file">
+
+
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+      <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Contact us for help
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Ask a question or get help in your language. <br><br>
+              Telephone: <br>
+              0300 123 1024<br>
+              0300 303 5176 (Welsh language)<br>
+              0300 790 6234 (Scotland)<br><br>
+              Textphone:<br>
+              18001 0300 123 1024 (England and Wales)<br>
+              18001 0300 790 6234 (Scotland)<br><br>
+              Monday to Friday, 9am to 5pm <br><br>
+              <a href="#"> Find out about call charges (opens in a new window)</a>
+          </div>
+      </details>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

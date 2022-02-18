@@ -1,0 +1,97 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/research-220217/amend/1-how"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form action="3-why" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Amend the claim</span>
+            <h1 class="govuk-heading-l">
+              Do you wish to add another respondent?
+            </h1>
+            <div id="respondent-hint" class="govuk-hint">
+              If you want to add a respondent (in other words, to bring the claim against an additional person or organisation) then you will need to set out their name and address.
+            </div>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="respondent" name="respondent" type="radio" value="yes" data-aria-controls="conditional-respondent">
+              <label class="govuk-label govuk-radios__label" for="respondent">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-respondent">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="respondent-name">
+                  What is the name and address of the person or organisation?
+                </label>
+                <textarea class="govuk-textarea" id="respondent-name" name="respondent-name" rows="5" aria-describedby="respondent-name-hint"></textarea>
+              </div>
+
+            </div>
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="respondent-2" name="respondent" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="respondent-2">
+                  No, the original respondent is still correct
+                </label>
+              </div>
+          </div>
+
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+      <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Contact us for help
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">Ask a question or get help in your language. <br><br>
+              Telephone: <br>
+              0300 123 1024<br>
+              0300 303 5176 (Welsh language)<br>
+              0300 790 6234 (Scotland)<br><br>
+              Textphone:<br>
+              18001 0300 123 1024 (England and Wales)<br>
+              18001 0300 790 6234 (Scotland)<br><br>
+              Monday to Friday, 9am to 5pm <br><br>
+              <a href="#"> Find out about call charges (opens in a new window)</a>
+          </div>
+      </details>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
