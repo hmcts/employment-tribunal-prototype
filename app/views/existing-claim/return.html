@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Return to an existing claim
+      </h1>
+
+      <p class="govuk-body">
+        You’ll need to use either a <b>‘save and return number’</b> or your new <b>‘Employment Tribunal account’</b> to return to an existing claim.
+      </p>
+
+      <form action="/../save-and-return-answer" method="post" novalidate>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend">
+              <b>Have you got a save and return number or a new Employment Tribunal account?</b>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="save-number" name="number-or-account" type="radio" value="number">
+                <label class="govuk-label govuk-radios__label" for="save-number">
+                  I've got a <b> save and return number</b>
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="tribunal-account" name="number-or-account" type="radio" value="account">
+                <label class="govuk-label govuk-radios__label" for="tribunal-account">
+                  I've got a new <b> Employment Tribunal account</b>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
+
+      <p class="govuk-body">Don't have these details? <a href="#"> Start a new claim</a>.
+
+    </div>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Need help filling out this form? Contact us
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+        </div>
+      </details>
+  </div>
+
+{% endblock %}
