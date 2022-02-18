@@ -13,40 +13,39 @@
   html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
 }) }}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "/research-220217/amend/2-do-you-wish"
+}) }}
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
 
-    <form action="/research-220217/overview" method="post">
+    <form action="4-have-you-told" method="post">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-
-
-          <div class="govuk-panel govuk-panel--confirmation">
-            <h1 class="govuk-panel__title">
-              Your request has been sent to the tribunal
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Amend the claim</span>
+            <h1 class="govuk-heading-l">
+              Why would it be fair to grant this amendment?
             </h1>
-          </div>
-
-
-          <!-- some crude CSS just to make this look right quickly for UR -->
-          <div class="govuk-grid-column-two-thirds" style="margin-left: -10px;">
-            <h2 class="govuk-heading-m">What happens next</h2>
-            <p class="govuk-body">A judge or legal officer will decide whether the hearing is postponed. They may ask you for more information. </p>
-            <div class="govuk-inset-text">
-              <b>NOTE:</b> Your hearing remains listed unless you hear from the tribunal that your request to postpone has been granted.
+            <div id="respondent-hint" class="govuk-hint">
+              You must explain why it would be fair to amend your claim and why you did not include the details in your original claim form.
             </div>
-          </div>
+          </legend>
 
+          <div class="govuk-form-group">
+            <textarea class="govuk-textarea" id="why" name="why" rows="8"></textarea>
+          </div>
 
         </fieldset>
       </div>
 
       <button class="govuk-button" data-module="govuk-button">
-        Back to case overview
+        Continue
       </button>
 
       <details class="govuk-details" data-module="govuk-details">
