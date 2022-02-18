@@ -1,0 +1,113 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Alpha"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/research-220217/postpone/4-hearing-dates"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form action="6-check-your-answers" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Postpone a hearing</span>
+            <h1 class="govuk-heading-l">
+              Enter the date you cannot go to the hearing
+            </h1>
+            <p class="govuk-body">Only include dates from 4 May to 1 June 2022.</p>
+          </legend>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <h2 class="govuk-heading-m">Date you cannot attend</h2>
+              <div id="passport-issued-hint" class="govuk-hint">
+                For example, 27 3 2007
+              </div>
+              <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m govuk-!-margin-top-5" for="more-detail">Reason you cannot attend on this date</label></h2>
+              <textarea class="govuk-textarea" id="reason" name="reason" rows="5"></textarea>
+
+            </fieldset>
+          </div>
+
+      </div>
+
+        <div>
+          <button class="govuk-button hmcts-button--secondary  hmcts-add-another__add-button  govuk-!-margin-bottom-4" data-module="govuk-button">
+            Add another date
+          </button>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Contact us for help
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">Ask a question or get help in your language. <br><br>
+                Telephone: <br>
+                0300 123 1024<br>
+                0300 303 5176 (Welsh language)<br>
+                0300 790 6234 (Scotland)<br><br>
+                Textphone:<br>
+                18001 0300 123 1024 (England and Wales)<br>
+                18001 0300 790 6234 (Scotland)<br><br>
+                Monday to Friday, 9am to 5pm <br><br>
+                <a href="#"> Find out about call charges (opens in a new window)</a>
+            </div>
+        </details>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
