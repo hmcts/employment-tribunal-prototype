@@ -37,4 +37,16 @@ const path = require('path')
 
   })
 
+  router.post('/are-there-any-dates-answer', function (req, res) {
+
+  var answer = req.session.data['availability']
+
+  if (answer == "yes"){
+    res.redirect('/research-220217/postpone/5-dates')
+  }  if (answer == "no"){
+      res.redirect('/research-220217/postpone/6-check-your-answers')
+    } 
+
+  })
+
 module.exports = router
