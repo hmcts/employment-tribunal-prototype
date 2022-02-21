@@ -24,7 +24,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-    <form action="6-check-your-answers" method="post">
+    <form action="6-check-your-answers" method="post" novalidate>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -73,10 +73,49 @@
             </fieldset>
           </div>
 
+          <div class="govuk-form-group" style="display: none" id="myDIV">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <h2 class="govuk-heading-m">Date you cannot attend</h2>
+              <div id="passport-issued-hint" class="govuk-hint">
+                For example, 27 3 2007
+              </div>
+              <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m govuk-!-margin-top-5" for="more-detail">Reason you cannot attend on this date</label></h2>
+              <textarea class="govuk-textarea" id="reason" name="reason" rows="5"></textarea>
+
+            </fieldset>
+          </div>
+
       </div>
 
         <div>
-          <button class="govuk-button hmcts-button--secondary  hmcts-add-another__add-button  govuk-!-margin-bottom-4" data-module="govuk-button">
+          <button type="button" onclick="myFunction()" class="govuk-button hmcts-button--secondary  hmcts-add-another__add-button  govuk-!-margin-bottom-4" data-module="govuk-button">
             Add another date
           </button>
         </div>
@@ -109,5 +148,16 @@
 
     </div>
   </div>
+
+<script>
+  function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
 
 {% endblock %}
