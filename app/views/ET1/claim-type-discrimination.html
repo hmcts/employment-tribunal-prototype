@@ -1,0 +1,133 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "claim-type"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form method="post" action="create-account">
+      <h1 class="govuk-heading-xl">
+        What type of discrimination are you claiming?
+      </h1>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+          What is discrimination?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">Discrimination is when you’re unfairly treated because of any protected characteristics from the 2010 Equality Act. You have rights at work if you’ve experienced:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>direct discrimination</li>
+            <li>indirect discrimination</li>
+            <li>harassment</li>
+            <li>victimisation</li>
+          </ul>
+          <p class="govuk-body">See the <a href="#">GOV.UK guidance (opens in new tab)</a> for further information on protected characteristics and your workplace rights.
+        </div>
+      </details>
+
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="discrimination-type">
+          <div id="discrimination-type" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="discrimination-type" type="checkbox" value="Age">
+              <label class="govuk-label govuk-checkboxes__label" for="Age">
+                Age
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="discrimination-type" type="checkbox" value="Disability">
+              <label class="govuk-label govuk-checkboxes__label" for="Disability">
+                Disability
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="discrimination-type" type="checkbox" value="Ethnicity">
+              <label class="govuk-label govuk-checkboxes__label" for="Ethnicity">
+                Ethnicity
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="discrimination-type" type="checkbox" value="Gender reassignment">
+              <label class="govuk-label govuk-checkboxes__label" for="Gender reassignment">
+                Gender reassignment
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="discrimination-type" type="checkbox" value="Marriage or civil partnership">
+              <label class="govuk-label govuk-checkboxes__label" for="Marriage or civil partnership">
+                Marriage or civil partnership
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="discrimination-type" type="checkbox" value="Pregnancy or maternity">
+              <label class="govuk-label govuk-checkboxes__label" for="Pregnancy or maternity">
+                Pregnancy or maternity
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="discrimination-type" type="checkbox" value="Race">
+              <label class="govuk-label govuk-checkboxes__label" for="Race">
+                Race
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="discrimination-type" type="checkbox" value="Religion or belief">
+              <label class="govuk-label govuk-checkboxes__label" for="Religion or belief">
+                Religion or belief
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="discrimination-type" type="checkbox" value="Sex">
+              <label class="govuk-label govuk-checkboxes__label" for="Sex">
+                Sex
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="discrimination-type" type="checkbox" value="Sexual orientation">
+              <label class="govuk-label govuk-checkboxes__label" for="Sexual orientation">
+                Sexual orientation
+              </label>
+            </div>
+
+              </div>
+            </div>
+
+        </fieldset>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

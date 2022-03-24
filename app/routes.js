@@ -98,4 +98,19 @@ if (answer == "yes"){
 
 })
 
+router.post('/claim-type-answer', function (req,res) {
+
+var answer = req.session.data['claim-type']
+
+if (answer == "discrimination"){
+  res.redirect('/ET1/claim-type-discrimination')
+} if (answer == "pay" ){
+  res.redirect('/ET1/claim-type-pay')
+} else {
+  res.redirect('/create-account')
+}
+
+})
+
+
 module.exports = router
