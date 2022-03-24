@@ -1,0 +1,81 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "Acas"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form method="post" action="/Acas-valid-reason-answer">
+      <h1 class="govuk-heading-xl">
+        Do you have a valid reason why you do not have an ‘Acas early conciliation certificate’?
+      </h1>
+
+      <p class="govuk-body">
+        Under certain circumstances you can make a claim without an Acas early conciliation certificate.</p>
+
+        <p class="govuk-body">One of the following reasons (or ‘exemptions’) will cover your specific circumstances and explain why you do not need a certificate for a respondent:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>You’re making a claim with another person who already has an Acas early conciliation number </li>
+          <li>Acas do not have the power to provide early conciliation on some or all of your claim </li>
+          <li>The organisations or people you’re making a claim against has already been in touch with Acas  </li>
+          <li> You’re making an unfair dismissal claim which contains an application for ‘interim relief’ - this is rare and only applicable for certain reasons such as trade union activities, acting as a workers' representative or dismissal arising from whistleblowing </li>
+        </ul>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            If you tell us the wrong exemption (or it does not apply) your claim may be rejected.
+          </strong>
+        </div>
+
+        <div class="govuk-inset-text">
+          You’ll need to provide an exemption later as part of your claim. If you’re not sure which one applies <a href="#">contact Acas</a>.
+        </div>
+
+        <div class="govuk-form-group">
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="acas-reason" name="acas-reason" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="acas-reason">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="acas-reason-2" name="acas-reason" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="acas-reason-2">
+                No
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/index"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+  <form method="post" action="yourself-or-someone">
+    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-full" style="background: #1D70B8; padding: 20px;">
+
+
+          <h1 class="govuk-heading-l" style="color: #FFFFFF;">Before you continue</h1>
+          <p class="govuk-heading-m" style="color: #FFFFFF;">
+            You’ll have the opportunity to provide detailed information about your claim,
+            but you might want to have the minimum required information to hand:
+            <br><br>
+
+
+          <div class="govuk-grid-column-one-quarter">
+            <p class="govuk-heading-m">
+              <span class="dot" style="color: black; margin-right: 15px;">1</span><br>
+              <span class="dot" style="color: black; margin-right: 15px; margin-top: 55px">2</span><br>
+              <span class="dot" style="color: black; margin-right: 15px; margin-top: 85px">3</span><br>
+          </div>
+
+          <div class="govuk-grid-column-three-quarters" style="margin-left: -150px;">
+            <p class="govuk-heading-m" style="color: #FFFFFF;">The name and address of each claimant (you or the person you’re claiming for)
+              <br><br>
+             Name and address of the respondent you’re making the claim against - this can be found in any letter you received offering you the job, a contract of employment or payslips
+             <br><br>
+            Certificate number from the Acas early conciliation process, or explain why you do not have one
+            <br><br>
+          </div>
+
+          <div class="govuk-grid-column-full">
+            <p class="govuk-heading-m" style="color: #FFFFFF;">
+              You do not have to complete your claim in one session. You can save your progress and return to the claim at any time before submitting.
+            </p>
+          </div>
+
+    </div>
+
+    <button class="govuk-button govuk-!-margin-top-5" data-module="govuk-button">
+      Continue
+    </button>
+
+  </form>
+  </div>
+
+{% endblock %}

@@ -8,9 +8,9 @@
 {% block beforeContent %}
 {{ govukPhaseBanner({
   tag: {
-    text: "Beta"
+    text: "Alpha"
   },
-  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
 }) }}
 {% endblock %}
 
@@ -55,12 +55,12 @@
 
       {{ govukButton({
         text: "Start now",
-        href: "#",
+        href: "/ET1/before-you-continue",
         isStartButton: true
       }) }}
 
       <h2 class='govuk-heading-m'> Have you already started a claim?</h2>
-      <a class="govuk-link govuk-body govuk-link--no-visited-state" href="/existing-claim/return">Return to an existing claim</a>
+      <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Return to an existing claim</a>
 
       <h3 class='govuk-heading-m govuk-!-margin-top-5'> Help using the service</h3>
       <p class="govuk-body">
@@ -72,7 +72,7 @@
         Textphone: 18001 0300 790 6234 (Scotland)<br>
         Monday to Friday, 9am to 5pm<br>
 
-        <a href="#">Find out about call charges</a>
+        <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Find out about call charges</a>
       </p>
 
 

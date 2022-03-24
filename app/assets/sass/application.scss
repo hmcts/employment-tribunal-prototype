@@ -106,3 +106,13 @@ $govuk-assets-path: '/govuk/assets/';
   position: right;
   padding-left: 50px;
 }
+
+.dot {
+  height: 35px;
+  width: 35px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  display: inline-block;
+  color: black;
+  text-align: center; 
+}

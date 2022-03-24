@@ -45,8 +45,57 @@ const path = require('path')
     res.redirect('/research-220217/postpone/5-dates')
   }  if (answer == "no"){
       res.redirect('/research-220217/postpone/6-check-your-answers')
-    } 
+    }
 
   })
+
+router.post('/representing-yourself', function (req,res) {
+
+var representation = req.session.data['yourself-or-someone']
+
+if (representation == "yourself"){
+  res.redirect('/ET1/single-multiple')
+} if (representation == "someone" ){
+  res.redirect('employmenttribunals.service.gov.uk/apply')
+}
+
+})
+
+router.post('/single-or-multiple-answer', function (req,res) {
+
+var answer = req.session.data['single-or-multiple']
+
+if (answer == "single"){
+  res.redirect('/ET1/Acas')
+} if (answer == "multiple" ){
+  res.redirect('employmenttribunals.service.gov.uk/en/apply/application-number')
+}
+
+})
+
+
+router.post('/acas-certificate-answer', function (req,res) {
+
+var answer = req.session.data['acas-certificate']
+
+if (answer == "yes"){
+  res.redirect('/ET1/claim-type')
+} if (answer == "no" ){
+  res.redirect('/ET1/acas-valid-reason')
+}
+
+})
+
+router.post('/Acas-valid-reason-answer', function (req,res) {
+
+var answer = req.session.data['acas-reason']
+
+if (answer == "yes"){
+  res.redirect('/ET1/claim-type')
+} if (answer == "no" ){
+  res.redirect('/ET1/contact-acas')
+}
+
+})
 
 module.exports = router

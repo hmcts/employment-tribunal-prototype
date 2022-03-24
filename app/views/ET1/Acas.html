@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "single-multiple"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" action="/acas-certificate-answer">
+      <h1 class="govuk-heading-xl">
+        Do you have an ‘Acas early conciliation certificate’ for the respondent or respondents you’re claiming against?
+      </h1>
+      <p class="govuk-body">
+      To make a claim you usually need to get an Acas early conciliation certificate (or give a valid reason why you do not have one) for each respondent you’re making your claim against.
+      <br><br>
+      Acas will have sent you certificates after you initially contacted them to try and settle your dispute through early conciliation.
+      <br><br>
+      The certificates include the details of the respondent you’re making your claim against along with a number to identify them. You’ll need to provide these later as part of your claim.</p>
+
+      <div class="govuk-inset-text">
+        If you’re claiming against multiple respondents after <b>1 December 2021</b>, your certificate numbers should exist on one notification letter.
+      </div>
+
+      <div class="govuk-form-group">
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="acas-certificate" name="acas-certificate" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="acas-certificate">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="acas-certificate-2" name="acas-certificate" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="acas-certificate-2">
+              No
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
