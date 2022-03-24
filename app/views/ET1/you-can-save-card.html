@@ -1,0 +1,46 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+  <form method="post" action="task-list">
+    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-9" style="background: #1D70B8; padding: 20px;">
+
+
+          <h1 class="govuk-heading-l" style="color: #FFFFFF;">You do not have to complete your claim in one go</h1>
+          <p class="govuk-heading-m" style="color: #FFFFFF;">
+            You can save it at any time by selecting ‘Save for later’ at the bottom of any page.
+            <br><br>To return to your claim – sign in to your Employment Tribunal account.
+
+    </div>
+
+  <div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button" type="submit">
+    Continue
+  </button>
+
+  <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+    Save for later
+  </button>
+  </div>
+
+  </form>
+  </div>
+
+{% endblock %}

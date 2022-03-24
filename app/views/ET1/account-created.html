@@ -13,30 +13,22 @@
   html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
 }) }}
 
-{{ govukBackLink({
-  text: "Back",
-  href: "#"
-}) }}
 {% endblock %}
-
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="sign-in">
       <h1 class="govuk-heading-xl">
-        Question or H1
+        Account created
       </h1>
 
-      <div class="govuk-button-group">
-      <button class="govuk-button" data-module="govuk-button" type="submit">
+      <p class="govuk-body">You can now sign into your Employment Tribunal account.</a></p>
+
+      <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
-
-      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
-        Save for later
-      </button>
-      </div>
-
+    </form>
     </div>
   </div>
 
