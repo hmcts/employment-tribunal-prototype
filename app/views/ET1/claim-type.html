@@ -1,0 +1,109 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+<a href="#" class="govuk-back-link" onclick="history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form method="post" action="/claim-type-answer">
+      <h1 class="govuk-heading-xl">
+        What type of claim are you making?
+      </h1>
+
+      <p class="govuk-body">You can choose all that apply to you. Further information will be asked for later in the claim.</p>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="claim-hint">
+          <div id="claim-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="claim-type" type="checkbox" value="breach">
+              <label class="govuk-label govuk-checkboxes__label" for="Breach">
+                Breach of contract - including notice pay
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type-2" name="claim-type" type="checkbox" value="discrimination">
+              <label class="govuk-label govuk-checkboxes__label" for="claim-type-2">
+                Discrimination of any type
+              </label>
+              <div id="claim-type-2-hint" class="govuk-hint govuk-checkboxes__hint">
+                for example because of your sex, ethnicity, disability or other characteristic
+              </div>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type-3" name="claim-type" type="checkbox" value="pay">
+              <label class="govuk-label govuk-checkboxes__label" for="claim-type-3">
+                Pay-related claim
+              </label>
+            </div>
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="claim-type-4" name="claim-type" type="checkbox" value="dismissal">
+                <label class="govuk-label govuk-checkboxes__label" for="claim-type-4">
+                  Unfair dismissal
+                </label>
+                <div id="claim-type-4-hint" class="govuk-hint govuk-checkboxes__hint">
+                  including constructive dismissal
+                </div>
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="claim-type-5" name="claim-type" type="checkbox" value="whistleblowing">
+                <label class="govuk-label govuk-checkboxes__label" for="claim-type-5">
+                  Whistleblowing
+                </label>
+                <div id="claim-type-5-hint" class="govuk-hint govuk-checkboxes__hint">
+                  including dismissal or any other unfair treatmeant after whistleblowing
+                </div>
+              </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="claim-type-6" name="claim-type" type="checkbox" value="other" data-aria-controls="conditional-claim-type-6">
+                  <label class="govuk-label govuk-checkboxes__label" for="claim-type-6">
+                    Other type of claim
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-claim-type-6">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="other-type">
+                      Please describe what type of claim you want to make
+                    </label>
+                    <textarea class="govuk-textarea govuk-!-width-three-quarters" rows="3" id="other-type" name="other-type"></textarea>
+                </div>
+              </div>
+            </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

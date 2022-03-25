@@ -1,0 +1,46 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "#"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="task-list">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Your claim has been saved
+        </h1>
+      </div>
+
+      <p class="govuk-body">You can come back to your claim at another time by signing in to your Employment Tribunal account.</p>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Continue with your claim
+      </button>
+    </form>
+
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

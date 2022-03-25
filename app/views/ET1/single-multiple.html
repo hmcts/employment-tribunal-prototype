@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "yourself-or-someone"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="/single-or-multiple-answer">
+
+        <h1 class="govuk-heading-xl">
+          Are you bringing a claim on your own or with others?
+        </h1>
+
+        <p class="govuk-body">
+          You can make a claim to an employment tribunal on your own, where you are the only claimant. You can also make a claim alongside another person, or a group of people who have been treated in the same way.
+          <br><br>
+          It helps the employment tribunal to know which type it is. If you do not know, choose the first option.
+          <br><br>
+          If you’re claiming with other people,  you will be asked to tell us their names (if you know them).</p>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="single-or-multiple" name="single-or-multiple" type="radio" value="single">
+                  <label class="govuk-label govuk-radios__label" for="yourself-or-someone">
+                    I’m claiming on my own
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="single-or-multiple-2" name="single-or-multiple" type="radio" value="multiple">
+                  <label class="govuk-label govuk-radios__label" for="single-or-multiple-2">
+                    I’m claiming with another person or other people
+                  </label>
+                </div>
+
+
+              </div>
+
+            </fieldset>
+          </div>
+
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

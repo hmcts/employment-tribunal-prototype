@@ -1,0 +1,43 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "create-account"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Check your email
+      </h1>
+
+      <p class="govuk-body">We've sent a confirmation email to <b>{{ data['Email'] }}</b></p>
+
+      <h2 class="govuk-heading-m">
+        Can't see the email? </h2>
+
+      <p class="govuk-body">It can take a few minutes to arrive. Check your junk mail if you can't see it in your inbox.<br> <br>
+        If you still can't see it <a class="govuk-link--no-visited-state" href="create-account">enter your details again</a>.</p>
+        <br><hr><br>
+        <p class="govuk-body" style="color: grey"> Not for build: <a class="govuk-link--no-visited-state" href="email">Email example</a> </p>
+
+    </div>
+  </div>
+
+{% endblock %}

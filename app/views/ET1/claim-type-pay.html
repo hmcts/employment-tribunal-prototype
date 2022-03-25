@@ -1,0 +1,97 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "claim-type"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form method="post" action="create-account">
+      <h1 class="govuk-heading-xl">
+        What type of pay claim are you making?
+      </h1>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+          What are pay claims?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">It is against the law for an employer to withhold pay after an employee has carried out work for them. This can also include unlawful deduction of pay.</p>
+        </div>
+      </details>
+
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="discrimination-type">
+          <div id="discrimination-type" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="pay-type" type="checkbox" value="Arrears (pay you are owed)">
+              <label class="govuk-label govuk-checkboxes__label" for="Arrears (pay you are owed)">
+                Arrears (pay you are owed)
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="pay-type" type="checkbox" value="Holiday pay">
+              <label class="govuk-label govuk-checkboxes__label" for="Holiday pay">
+                Holiday pay
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="pay-type" type="checkbox" value="Notice pay">
+              <label class="govuk-label govuk-checkboxes__label" for="Notice pay">
+                Notice pay
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="pay-type" type="checkbox" value="Redundancy pay">
+              <label class="govuk-label govuk-checkboxes__label" for="Redundancy pay">
+                Redundancy pay
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="claim-type" name="pay-type" type="checkbox" value="Other payments">
+              <label class="govuk-label govuk-checkboxes__label" for="Other payments">
+                Other payments
+              </label>
+            </div>
+
+
+              </div>
+            </div>
+
+        </fieldset>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

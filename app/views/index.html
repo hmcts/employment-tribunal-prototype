@@ -10,7 +10,7 @@
   tag: {
     text: "Alpha"
   },
-  html: 'Your <a class="govuk-link" href="#">feedback</a> helps us to improve this service.'
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
 }) }}
 {% endblock %}
 
@@ -37,7 +37,7 @@
         <strong class="govuk-warning-text__text">
           <span class="govuk-warning-text__assistive">Warning</span>
           To make a claim you need to contact Acas and get an ‘Early conciliation certificate’ from them or give us a valid reason why you do not have one.
-           If you do not have a certificate or a reason you need to <a href="#">contact Acas.</a>
+           If you do not have a certificate or a reason you need to <a class="govuk-link--no-visited-state" href="#">contact Acas.</a>
         </strong>
       </div>
 
@@ -55,12 +55,12 @@
 
       {{ govukButton({
         text: "Start now",
-        href: "#",
+        href: "/ET1/before-you-continue",
         isStartButton: true
       }) }}
 
       <h2 class='govuk-heading-m'> Have you already started a claim?</h2>
-      <a class="govuk-link govuk-body" href="#">Return to an existing claim</a>
+      <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Return to an existing claim</a>
 
       <h3 class='govuk-heading-m govuk-!-margin-top-5'> Help using the service</h3>
       <p class="govuk-body">
@@ -72,7 +72,7 @@
         Textphone: 18001 0300 790 6234 (Scotland)<br>
         Monday to Friday, 9am to 5pm<br>
 
-        <a href="#">Find out about call charges</a>
+        <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Find out about call charges</a>
       </p>
 
 
