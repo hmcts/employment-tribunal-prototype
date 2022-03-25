@@ -35,16 +35,16 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a class="govuk-link--no-visited-state" href="#" aria-describedby="personal-details">
+                <a class="govuk-link--no-visited-state" href="your-details/DOB" aria-describedby="personal-details">
                   Personal details
                 </a>
               </span>
             <!-- When DOB & Gender complete ><!-->
-            {% if data['gender'] and data['DOB'] %}<strong class="govuk-tag app-task-list__tag" id="contact-details-status">Completed</strong>{% endif %}
+            {% if data['title'] and data['DOB-day'] %}<strong class="govuk-tag app-task-list__tag" id="contact-details-status">Completed</strong>{% endif %}
             <!-- When DOB complete but not gender ><!-->
-            {% if data['DOB'] %}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>{% endif %}
+            {% if not data['title'] %}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>{% endif %}
             <!-- When not started ><!-->
-            {% if not data['DOB'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>{% endif %}
+            {% if not data['DOB-day'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>{% endif %}
             </li>
 
             <li class="app-task-list__item">
