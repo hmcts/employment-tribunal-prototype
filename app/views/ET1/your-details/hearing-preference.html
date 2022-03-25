@@ -1,0 +1,88 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/ET1/your-details/contact-preference"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="reasonable-adjustments">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="video-hearings-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Would you be able to take part in hearings by video and phone?
+              </h1>
+            </legend>
+            <p class="govuk-body">If your case goes to a hearing, it can take place either:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>in person, in a room at a tribunal (‘face-to-face’)</li>
+              <li>by video (where you can join from a place suitable to you)</li>
+              <li>by phone</li>
+            </ul>
+
+            <div id="video-hearings-hint" class="govuk-hint">
+              Select all that apply
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="video-hearings" name="video-hearings" type="checkbox" value="Yes, I can take part in video hearings">
+                <label class="govuk-label govuk-checkboxes__label" for="video-hearings">
+                  Yes, I can take part in video hearings
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="video-hearings-2" name="video-hearings" type="checkbox" value="Yes, I can take part in phone hearings">
+                <label class="govuk-label govuk-checkboxes__label" for="video-hearings-2">
+                  Yes, I can take part in phone hearings
+                </label>
+              </div>
+
+              <div class="govuk-checkboxes__divider">or</div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="video-hearings-5" name="video-hearings" type="checkbox" value="No, I cannot take part in either video or phone hearings" data-behaviour="exclusive">
+                <label class="govuk-label govuk-checkboxes__label" for="video-hearings-5">
+                  No, I cannot take part in either video or phone hearings
+                </label>
+                <div id="video-hearings-5-hint" class="govuk-hint govuk-checkboxes__hint">
+                    If you choose this option please tell us why in case we can assist you
+                  </div>
+
+
+          </fieldset>
+        </div>
+
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='/../ET1/claim-saved';">
+        Save for later
+      </button>
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,111 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/ET1/your-details/hearing-preference"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="/reasonable-adjustments-answer">
+      <h1 class="govuk-heading-xl">Do you have a physical, mental or learning disability or health condition that means you need support during your case?</h1>
+
+      <div class="govuk-inset-text">
+        We know some people need support to access information and use our services. We often call this a reasonable adjustment. Some reasonable adjustments need to be agreed by the judge or HMCTS. You can discuss with the tribunal if your needs change.
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="reasonable-adjustments-hint">
+          <div id="reasonable-adjustments-hint" class="govuk-hint">
+            Select all that apply to you - specific requirements can be given next
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="reasonable-adjustments" name="reasonable-adjustments" type="checkbox" value="I need documents in an alternative format">
+              <label class="govuk-label govuk-checkboxes__label" for="reasonable-adjustments">
+                I need documents in an alternative format
+                <div id="reasonable-adjustments-1-hint" class="govuk-hint">
+                  for example, braille or different colours and sizes
+                </div>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="reasonable-adjustments-2" name="reasonable-adjustments" type="checkbox" value="I need help communicating and understanding">
+              <label class="govuk-label govuk-checkboxes__label" for="reasonable-adjustments">
+                I need help communicating and understanding
+                <div id="reasonable-adjustments-2-hint" class="govuk-hint">
+                  for example, sight, hearing, speaking or interpretation
+                </div>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="reasonable-adjustments-3" name="reasonable-adjustments" type="checkbox" value="I need to bring support with me to a hearing">
+              <label class="govuk-label govuk-checkboxes__label" for="reasonable-adjustments">
+                I need to bring support with me to a hearing
+                <div id="reasonable-adjustments-3-hint" class="govuk-hint">
+                  for example, someone you know or an assistance animal
+                </div>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="reasonable-adjustments-4" name="reasonable-adjustments" type="checkbox" value="I need something to feel comfortable during a hearing">
+              <label class="govuk-label govuk-checkboxes__label" for="reasonable-adjustments">
+                I need something to feel comfortable during a hearing
+                <div id="reasonable-adjustments-4-hint" class="govuk-hint">
+                  for example, breaks or extra space
+                </div>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="reasonable-adjustments-5" name="reasonable-adjustments" type="checkbox" value="I need help travelling to, or moving around tribunal building">
+              <label class="govuk-label govuk-checkboxes__label" for="reasonable-adjustments">
+                I need help travelling to, or moving around tribunal buildings
+                <div id="reasonable-adjustments-5-hint" class="govuk-hint">
+                  access and mobility support if a hearing takes place in person
+                </div>
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__divider">or</div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="reasonable-adjustments-none" name="reasonable-adjustments" type="checkbox" value="No, I do not need any extra support at this time" data-behaviour="exclusive">
+              <label class="govuk-label govuk-checkboxes__label" for="reasonable-adjustments-none">
+                No, I do not need any extra support at this time
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='/../ET1/claim-saved';">
+        Save for later
+      </button>
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}

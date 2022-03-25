@@ -1,0 +1,157 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/ET1/your-details/reasonable-adjustments"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="#">
+      <h1 class="govuk-heading-xl">I need documents in an alternative format</h1>
+
+      <p class="govuk-body">
+        Think about all communication with the tribunal, as well as what you might need at a hearing. Consider remote and in-person hearings, in case your preferred hearing type is not possible.
+      </p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="documents-hint">
+          <div id="documents-hint" class="govuk-hint">
+            Select all that apply to you
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="documents-colour" name="documents" type="checkbox" value="I need documents printed in a particular colour or font" data-aria-controls="conditional-documents-colour">
+                  <label class="govuk-label govuk-checkboxes__label" for="documents-colour">
+                    I need documents printed in a particular colour or font
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-documents-colour">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="conditional-documents-colour">
+                      Please describe what you need
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="documents-colour" name="documents-colour" >
+                  </div>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="documents-easy" name="documents" type="checkbox" value="Documents in an easy read format" data-aria-controls="conditional-documents-easy">
+                  <label class="govuk-label govuk-checkboxes__label" for="documents-easy">
+                    Documents in an easy read format
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="documents-braille" name="documents" type="checkbox" value="Braille documents" data-aria-controls="conditional-documents-braille">
+                  <label class="govuk-label govuk-checkboxes__label" for="documents-braille">
+                    Braille documents
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="documents-large" name="documents" type="checkbox" value="Documents in large print" data-aria-controls="conditional-documents-large">
+                  <label class="govuk-label govuk-checkboxes__label" for="documents-large">
+                    Documents in large print
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-documents-large">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="conditional-documents-large">
+                      Please describe what you need
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="documents-large" name="documents-large" >
+                  </div>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="documents-audio" name="documents" type="checkbox" value="Audio translation of documents" data-aria-controls="conditional-documents-audio">
+                  <label class="govuk-label govuk-checkboxes__label" for="documents-audio">
+                    Audio translation of documents
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="documents-read" name="documents" type="checkbox" value="Documents read out to me" data-aria-controls="conditional-documents-read">
+                  <label class="govuk-label govuk-checkboxes__label" for="documents-read">
+                    Documents read out to me
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="documents-emailed" name="documents" type="checkbox" value="Documents emailed to me" data-aria-controls="conditional-documents-emailed">
+                  <label class="govuk-label govuk-checkboxes__label" for="documents-emailed">
+                    Information emailed to me
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="documents-other" name="documents" type="checkbox" value="Other" data-aria-controls="conditional-documents-other">
+                  <label class="govuk-label govuk-checkboxes__label" for="documents-other">
+                    Other
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-documents-other">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="conditional-documents-other">
+                      Please describe what you need
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="documents-other" name="documents-other" >
+                  </div>
+                </div>
+
+
+
+                <div class="govuk-checkboxes__divider">or</div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="documents-no" name="documents" type="checkbox" value="I do not need any of this support at this time" data-behaviour="exclusive">
+                  <label class="govuk-label govuk-checkboxes__label" for="documents-no">
+                    I do not need any of this support at this time
+                  </label>
+                </div>
+              </div>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='/../ET1/claim-saved';">
+        Save for later
+      </button>
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}

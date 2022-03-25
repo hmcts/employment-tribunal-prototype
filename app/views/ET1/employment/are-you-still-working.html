@@ -1,0 +1,71 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/ET1/employment/did-you-work"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" action="/still-working-answer">
+      <h1 class="govuk-heading-xl">
+        Are you still working for the organisation or person you’re making your claim against?
+      </h1>
+
+      <div class="govuk-form-group">
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="are-you-working" name="are-you-working" type="radio" value="I’m still working for the respondent">
+              <label class="govuk-label govuk-radios__label" for="are-you-working">
+                I’m still working for the respondent
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="are-you-working-2" name="are-you-working" type="radio" value="I’m working a notice period for the respondent">
+              <label class="govuk-label govuk-radios__label" for="are-you-working-2">
+                I’m working a notice period for the respondent
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="are-you-working-3" name="are-you-working" type="radio" value="I’m no longer working for the respondent">
+              <label class="govuk-label govuk-radios__label" for="are-you-working-3">
+                I’m no longer working for the respondent
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

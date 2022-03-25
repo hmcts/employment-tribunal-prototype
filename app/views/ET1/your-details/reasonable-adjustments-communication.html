@@ -1,0 +1,155 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+<a href="#" class="govuk-back-link" onclick="history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="#">
+      <h1 class="govuk-heading-xl">I need help communicating and understanding</h1>
+
+      <p class="govuk-body">
+      Think about all communication with the tribunal, as well as what you might need at a hearing. Consider remote and in-person hearings, in case your preferred hearing type is not possible.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="communication-hint">
+          <div id="documents-hint" class="govuk-hint">
+            Select all that apply to you
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="communication-hearing" name="communication" type="checkbox" value="Hearing loop (hearing enhancement system)">
+                  <label class="govuk-label govuk-checkboxes__label" for="documents-emailed">
+                    Hearing loop (hearing enhancement system)
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="communication-infrared" name="communication" type="checkbox" value="Infrared receiver (hearing enhancement system)">
+                  <label class="govuk-label govuk-checkboxes__label" for="communication-infrared">
+                    Infrared receiver (hearing enhancement system)
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="communication-close" name="communication" type="checkbox" value="Need to be close to who is speaking">
+                  <label class="govuk-label govuk-checkboxes__label" for="communication-close">
+                    Need to be close to who is speaking
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="communication-speaker" name="communication" type="checkbox" value="Lip speaker">
+                  <label class="govuk-label govuk-checkboxes__label" for="communication-speaker">
+                    Lip speaker
+                    <div id="communication-speaker-hint" class="govuk-hint">
+                      hearing person who has been trained to be easily lip read
+                    </div>
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="communication-BSL" name="communication" type="checkbox" value="British Sign Language interpreter">
+                  <label class="govuk-label govuk-checkboxes__label" for="communication-BSL">
+                    British Sign Language interpreter
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="communication-palantypist" name="communication" type="checkbox" value="Speech to text reporter (palantypist)">
+                  <label class="govuk-label govuk-checkboxes__label" for="communication-palantypist">
+                    Speech to text reporter (palantypist)
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="communication-extra" name="communication" type="checkbox" value="Extra time to think and explain myself">
+                  <label class="govuk-label govuk-checkboxes__label" for="communication-extra">
+                    Extra time to think and explain myself
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="communication-visit" name="communication" type="checkbox" value="Visit to court or tribunal before the tribunal hearing">
+                  <label class="govuk-label govuk-checkboxes__label" for="communication-visit">
+                    Visit to court or tribunal before the tribunal hearing
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="communication-Explanation" name="communication" type="checkbox" value="Explanation of the tribual hearing room layout and who will be in the room">
+                  <label class="govuk-label govuk-checkboxes__label" for="communication-Explanation">
+                    Explanation of the tribual hearing room layout and who will be in the room
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="communication-Intermediary" name="communication" type="checkbox" value="Intermediary">
+                  <label class="govuk-label govuk-checkboxes__label" for="communication-Intermediary">
+                    Intermediary
+                    <div id="communication-speaker-hint" class="govuk-hint">
+                      a person to act as a link and assist you in the hearing - a judge may allow this to help you understand and communicate better
+                    </div>
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="communication-other" name="communication" type="checkbox" value="Other" data-aria-controls="conditional-communication-other">
+                  <label class="govuk-label govuk-checkboxes__label" for="communication-other">
+                    Other
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-communication-other">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="conditional-communication-other">
+                      Please describe what you need
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="communication-other" name="communication-other" >
+                  </div>
+                </div>
+
+
+
+                <div class="govuk-checkboxes__divider">or</div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="communication-no" name="communication" type="checkbox" value="I do not need any of this support at this time" data-behaviour="exclusive">
+                  <label class="govuk-label govuk-checkboxes__label" for="communication-no">
+                    I do not need any of this support at this time
+                  </label>
+                </div>
+              </div>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='/../ET1/claim-saved';">
+        Save for later
+      </button>
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}
