@@ -1,0 +1,101 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/ET1/employment/working-notice/average-weekly-hours"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" action="pension">
+        <h1 class="govuk-heading-xl">Your pay (optional)</h1>
+
+        <p class="govuk-body">
+          For some types of claim, the tribunal will need the average of your last 12 weeks’ pay. Please provide your best estimate for your average weekly pay. You will be able to correct it later if needed.
+          Providing your pay information will help the tribunal progress your claim.<br><br>
+          You can get information from payslips. Include any overtime payments, commission and bonuses.</p>
+
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="pay-before">
+              Enter your pay BEFORE tax and National Insurance
+            </label>
+          </h2>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-10" id="cost" name="pay-before" type="text" spellcheck="false">
+          </div>
+        </div>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="pay-after">
+              Enter your pay AFTER tax and National Insurance
+            </label>
+          </h2>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-10" id="cost" name="pay-after" type="text" spellcheck="false">
+          </div>
+        </div>
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="pay-type">
+              Is this your weekly, monthly or annual pay?
+            </label>
+          </h2>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="pay-type" name="pay-type" type="radio" value="weekly">
+              <label class="govuk-label govuk-radios__label" for="pay-type">
+                Weekly
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="pay-type" name="pay-type" type="radio" value="Monthly">
+              <label class="govuk-label govuk-radios__label" for="pay-type">
+                Monthly
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="pay-type" name="pay-type" type="radio" value="Annual">
+              <label class="govuk-label govuk-radios__label" for="pay-type">
+                Annual
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+    </form>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

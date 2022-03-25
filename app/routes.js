@@ -166,5 +166,33 @@ if (answer == "yes"){
 
 })
 
+router.post('/not-working-notice-period-answer', function (req,res) {
+
+var answer = req.session.data['notice-period']
+
+if (answer == "yes"){
+  res.redirect('ET1/employment/not-working/notice-type')
+} else if (answer == "no" ){
+  res.redirect('/ET1/employment/not-working/average-weekly-hours')
+
+}
+
+})
+
+router.post('/not-working-new-job-answer', function (req,res) {
+
+var answer = req.session.data['new-job']
+
+if (answer == "yes"){
+  res.redirect('ET1/employment/not-working/new-job-start')
+} else if (answer == "no" ){
+  res.redirect('/ET1/task-list')
+
+}
+
+})
+
+
+
 
 module.exports = router

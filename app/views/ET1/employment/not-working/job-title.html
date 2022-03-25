@@ -1,0 +1,58 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/ET1/employment/are-you-still-working"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="start-date">
+      <h1 class="govuk-heading-xl">
+        Employment details
+      </h1>
+
+      <p class="govuk-body">Tell us some details about working for the organisation or person you’re making your claim against.
+        <br><br>
+        These details will be used to help progress your claim. </p>
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-heading-m">Job title</h2>
+      <label class="govuk-label" for="job-title">
+        Tell us what role you had at the time of your dispute.
+      </label>
+      <input class="govuk-input govuk-input-width-two-thirds" id="job-title" name="job-title" type="text">
+    </div>
+
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+    </form>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -15,7 +15,7 @@
 
 {{ govukBackLink({
   text: "Back",
-  href: "/ET1/employment/still-working/notice-length"
+  href: "/ET1/employment/working-notice/end-date"
 }) }}
 {% endblock %}
 
@@ -23,15 +23,17 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form method="post" action="pay">
+        <form method="post" action="average-weekly-hours">
 
-        <h1 class="govuk-heading-xl">What are your average weekly hours?</h1>
-        <p class="govuk-body">If the number of hours you work changes each week (for example, if you’re on a zero-hours contract), use your last 3 months of payslips to work out your weekly average.
-          <br><br>Do not include overtime hours.</p>
-
-          <input class="govuk-input govuk-input--width-2 govuk-!-margin-bottom-5" id="notice-length" name="average-weekly-hours" type="text">
-
-
+                <div class="govuk-form-group">
+                  <h1 class="govuk-heading-xl">
+                    How many weeks or months of your notice period are you being paid for?
+                  </h1>
+                  <label class="govuk-label" for="notice-length">
+                    For example, 4
+                  </label>
+                  <input class="govuk-input govuk-input--width-2" id="notice-length" name="notice-length" type="text">
+                </div>
 
 
       <div class="govuk-button-group">
