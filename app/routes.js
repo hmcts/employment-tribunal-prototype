@@ -98,33 +98,44 @@ if (answer == "yes"){
 
 })
 
+// router.post('/claim-type-answer', function (req,res) {
+//
+// var answer = req.session.data['claim-type']
+//
+// if (answer == "discrimination"){
+//   res.redirect('/ET1/claim-type-discrimination')
+// } if (answer == "pay" ){
+//   res.redirect('/ET1/claim-type-pay')
+// } else {
+//   res.redirect('legacy service')
+// }
+//
+// })
+
 router.post('/claim-type-answer', function (req,res) {
 
-var answer = req.session.data['claim-type']
+  var answer = req.session.data['claim-type']
 
-if (answer == "discrimination"){
-  res.redirect('/ET1/claim-type-discrimination')
-} if (answer == "pay" ){
-  res.redirect('/ET1/claim-type-pay')
-} else {
-  res.redirect('legacy service')
-}
-
+  if (answer.includes("discrimination") && answer.includes("pay")) {
+    res.redirect('/ET1/claim-type-discrimination')
+  } if (answer.includes("discrimination")){
+    res.redirect('ET1/claim-type-discrimination')
+  }  if (answer.includes("pay")){
+    res.redirect('ET1/claim-type-pay')
+  }
 })
 
-router.post('/reasonable-adjustments-answer', function (req,res) {
+router.post('/discrimination-routing-answer', function (req,res) {
 
-var answer = req.session.data['reasonable-adjustments']
+  var answer = req.session.data['claim-type']
 
-if (answer == "I need documents in an alternative format"){
-  res.redirect('alternative docs')
-} else if (answer == "I need help communicating and understanding" ){
-  res.redirect('communicating')
-} else {
-  res.redirect('/create-account')
-}
-
+  if (answer.includes("pay")) {
+    res.redirect('/ET1/claim-type-pay')
+  } else {
+    res.redirect('create-account')
+  }
 })
+
 
 router.post('/did-you-work-routing', function (req,res) {
 
