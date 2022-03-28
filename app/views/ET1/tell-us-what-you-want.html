@@ -1,0 +1,119 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+<a href="#" class="govuk-back-link" onclick="history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="/what-you-want-answer">
+      <h1 class="govuk-heading-xl">
+        What do you want from your claim?
+      </h1>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Compensation - what can a tribunal award?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          If a tribunal decides you’ve been unfairly dismissed, you’ll normally receive compensation which is made up of:<br>
+          <br>
+          • a basic award - fixed sum worked out using a standard formula<br>
+          • a compensatory award - compensation for the actual money you lost due to your dismissal<br><br>
+          Compensation can be reduced for various reasons and a tribunal will tell you more about this if it applies in your specific circumstances.<br><br>
+
+          In disciplinary or grievance cases, you may be entitled to an increased award if an employer fails to follow the guidance set out in the <a href="#">Acas Code of Practice on disciplinary and grievance procedures</a>.<br><br>
+
+          Similarly, awards can be reduced if a tribunal decides you’ve failed to follow the guidance set out in the <a href="#">Acas Code of Practice on disciplinary and grievance procedures</a>.<br><br>
+
+          In certain claims, such as those involving discrimination, a tribunal may compensate you for ‘injury to feelings’ (individual hurt and distress you may have suffered) in addition to compensation for financial loss.
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is a tribunal recommendation?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Depending on the nature and details of your claim, a tribunal can make a variety of recommendations and in the past included recommending:<br>
+          <br>
+          • employers review and update their equality and diversity policies<br>
+          • employees responsible for discrimination attend diversity and equality training<br><br>
+          • employers put a copy of a tribunal’s decision on their company noticeboard to make it clear to all employees a tribunal has decided discrimination has occurred
+        </div>
+      </details>
+
+      <fieldset class="govuk-fieldset" aria-describedby="what-hint">
+        <div id="what-hint" class="govuk-hint">
+          Select all that apply.
+        </div>
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="what-compensation" name="what-you-want" type="checkbox" value="Compensation">
+            <label class="govuk-label govuk-checkboxes__label" for="what-compensation">
+              Compensation
+            </label>
+            <div id="what-hint" class="govuk-hint govuk-checkboxes__hint">
+               You’ll be asked to provide an estimate of total compensation
+             </div>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="what-tribunal" name="what-you-want" type="checkbox" value="A tribunal recommendation">
+            <label class="govuk-label govuk-checkboxes__label" for="what-tribunal">
+              A tribunal recommendation
+            </label>
+            <div id="what-hint" class="govuk-hint govuk-checkboxes__hint">
+               You’ll be asked to describe your request to the tribunal
+             </div>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="what-old-job" name="what-you-want" type="checkbox" value="I want my old job back">
+            <label class="govuk-label govuk-checkboxes__label" for="what-old-job">
+              I want my old job back
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="what-another-job" name="what-you-want" type="checkbox" value="To get another job with the employer or an associated employer">
+            <label class="govuk-label govuk-checkboxes__label" for="what-another-job">
+              To get another job with the employer or an associated employer
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+
+      <br>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+      </div>
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

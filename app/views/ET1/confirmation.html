@@ -1,0 +1,107 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          Your claim has been submitted
+        </h1>
+      </div>
+      <p class="govuk-body">We've sent you an email confirmation.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>We’ll check your claim and may contact you if we have any questions </li>
+        <li>We’ll contact you once we’ve sent your claim to the respondents and explain what happens next</li>
+      </ul>
+
+      <div class="govuk-inset-text">
+        At present, due to the current situation with COVID-19, it’s not possible to give you an exact timescale of when we’ll be in touch.
+      </div>
+
+      <p class="govuk-body">For further information read <a href="#">Coronavirus (COVID-19): courts and tribunals guidance</a><p/>
+      <p class="govuk-body">To return to your claim at any time <a href="#">sign in to your account.</a><p/>
+
+
+      <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Submission details</caption>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Submission reference</th>
+          <td class="govuk-table__cell">2420 0534 7500</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Claim submitted</th>
+          <td class="govuk-table__cell">28 March 2022</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Download your claim</th>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">Save a copy of your claim</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Attachments included</th>
+          <td class="govuk-table__cell">None</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h3 class="govuk-heading-m">For questions about your claim</h3>
+    <p class="govuk-body">Contact the following tribunal office if you have any questions about your specific claim:</p>
+    <table class="govuk-table">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Tribunal office</th>
+        <td class="govuk-table__cell">Manchester</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Email</th>
+        <td class="govuk-table__cell">manchesteret@justice.gov.uk</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Telephone</th>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">0161 833 6100</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="govuk-heading-m">For questions about the employment tribunal process</h3>
+  <p class="govuk-body">Call one of our Employment Tribunal customer contact centres. They cannot give you legal advice.<br><br>
+    Telephone: 0300 123 1024<br>
+    Telephone: 0300 303 5176 (Welsh language) <br>
+    Telephone: 0300 790 6234 (Scotland) <br>
+    Textphone: 18001 0300 123 1024 (England and Wales) <br>
+    Textphone: 18001 0300 790 6234 (Scotland) <br><br>
+
+    Monday to Friday, 9am to 5pm
+    <a href="#">Find out more about call charges</a></p>
+
+    <div id="trusted-helper-box" style="border-style: solid; border-color: black; border-width: 1px; padding: 10px;">
+    <h4 class="govuk-heading-m">Would you like to help us improve our online services?</h4>
+    <p class="govuk-body">We’d like to ask you a couple of questions about whether you needed any help making your claim through our online form. </p>
+    <a class="govuk-link govuk-body" href="trusted-help">Give feedback</a>
+    </div>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

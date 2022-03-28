@@ -1,0 +1,92 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+<a href="#" class="govuk-back-link" onclick="history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="check-details">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="Acas-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Why do you not have an Acas number?
+              </h1>
+            </legend>
+            <div id="Acas-hint" class="govuk-hint">
+              Please note: incorrectly claiming an exemption may lead to your claim being rejected. If in doubt, please contact Acas.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="acas-reason" name="acas-reason" type="radio" value="Another person I’m making the claim with has an Acas early conciliation certificate number">
+                <label class="govuk-label govuk-radios__label" for="acas-reason">
+                  Another person I’m making the claim with has an Acas early conciliation certificate number
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="acas-reason-2" name="acas-reason" type="radio" value="Acas doesn’t have the power to conciliate on some or all of my claim">
+                <label class="govuk-label govuk-radios__label" for="acas-reason-2">
+                  Acas doesn’t have the power to conciliate on some or all of my claim
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="acas-reason-3" name="acas-reason" type="radio" value="My employer has already been in touch with Acas">
+                <label class="govuk-label govuk-radios__label" for="acas-reason-3">
+                  My employer has already been in touch with Acas
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="acas-reason-4" name="acas-reason" type="radio" value="The claim consists only of a complaint of unfair dismissal which contains an application for interim relief.">
+                <label class="govuk-label govuk-radios__label" for="acas-reason-4">
+                  The claim consists only of a complaint of unfair dismissal which contains an application for interim relief.
+                </label>
+                <div id="acas-reason-4-hint" class="govuk-hint govuk-radios__hint">
+                   Please note: this is a rare type of claim. The fact that you are making a claim of unfair dismissal does not mean you are necessarily making a claim for interim relief.
+                 </div>
+              </div>
+            </div>
+          </div>
+
+
+          </fieldset>
+        </div>
+
+
+      </div>
+
+
+
+      <div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Save and continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+      </div>
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

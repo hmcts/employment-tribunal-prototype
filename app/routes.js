@@ -193,6 +193,56 @@ if (answer == "yes"){
 })
 
 
+router.post('/did-you-work-respondent-address-answer', function (req,res) {
+
+var answer = req.session.data['did-you-work-respondent-address']
+
+if (answer == "yes"){
+  res.redirect('ET1/respondents/respondent-1-acas')
+} else if (answer == "no" ){
+  res.redirect('ET1/respondents/where-did-you-work')
+
+}
+
+})
+
+router.post('/respondent-acas-certificate-answer', function (req,res) {
+
+var answer = req.session.data['respondent-acas-number']
+
+if (answer == "Yes"){
+  res.redirect('ET1/respondents/check-details')
+} else if (answer == "No" ){
+  res.redirect('ET1/respondents/acas-number-reason')
+
+}
+
+})
+
+router.post('/what-you-want-answer', function (req,res) {
+
+  var answer = req.session.data['what-you-want']
+
+  if (answer.includes("Compensation") && answer.includes("A tribunal recommendation")) {
+    res.redirect('both')
+  } if (answer.includes("Compensation")){
+    res.redirect('ET1/compensation')
+  }  if (answer.includes("A tribunal recommendation")){
+    res.redirect('ET1/recommendation')
+  } else {
+    res.redirect('other')
+  }
+})
+
+router.post('/check-your-answers-completed', function (req, res) {
+
+  var answer = req.session.data['checked']
+
+  if (answer != 'checked') {
+    req.session.data['checked'] = 'checked';
+    res.redirect('ET1/task-list')
+  }
+})
 
 
 module.exports = router

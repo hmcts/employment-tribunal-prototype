@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+<a href="#" class="govuk-back-link" onclick="history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="respondent-1-address-postcode">
+      <h1 class="govuk-heading-xl">
+        What is the address of {{ data['respondent-1-name'] }}?
+      </h1>
+      <p class="govuk-body">You should be able to find the address on your payslips, contract or other official documents. </p>
+      <div class="govuk-inset-text">
+        This should be the same respondent address given to Acas.
+      </div>
+      <div class="govuk-form-group">
+        <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="respondent-1-postcode">
+            Enter postcode
+          </label>
+        </h2>
+        <input class="govuk-input govuk-input--width-10" id="respondent-1-postcode" name="respondent-1-postcode" type="text">
+      </div>
+      <p class="govuk-body"><a class="govuk-link--no-visited-state" href="#">I want to enter the address manually</a>
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Find address
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+      </div>
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

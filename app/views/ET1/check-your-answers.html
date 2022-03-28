@@ -1,0 +1,522 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+<a href="#" class="govuk-back-link" onclick="history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="confirmation">
+      <h1 class="govuk-heading-l">Check your answers</h1>
+      <p class="govuk-body">Check your answers before submitting your claim.</p>
+
+            <h2 class="govuk-heading-m">Type of claim</h2>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Type of claim
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [Claim types]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="claim-type">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <h2 class="govuk-heading-m">Personal details</h2>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of birth
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [Date of birth]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="your-details/DOB">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Sex
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [Sex]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="your-details/gender">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Gender same as registered birth sex
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No - [Insert user content]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="your-details/gender">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Preferred title
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Other - [User entered content]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="your-details/gender">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <h2 class="govuk-heading-m">Contact details</h2>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Contact or home address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  1 Main Road, SW1 1AA
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="your-details/address-1">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  UK telephone number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Not provided [When a user skips an optional question]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="your-details/telephone">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <h2 class="govuk-heading-m">Your preferences</h2>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  How would you like to be contacted about your claim?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Email
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="your-details/contact-preference">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Hearing preferences
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Yes, I can take part in video hearings
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="your-details/hearing-preference">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Do you have a physical, mental or learning disability or health condition that means you need support during your case?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  I need documents in an alternative format
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="your-details/reasonable-adjustments">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  I need documents in an alternative format
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  I need documents printed in a particular colour or format - [User description]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="your-details/reasonable-adjustments">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <h2 class="govuk-heading-m">Employment status</h2>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Did you work for the organisation or person you’re making your claim against?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Yes
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/employment/did-you-work">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Are you still working for the organisation or person you’re making your claim against?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  I’m working a notice period for the respondent
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/employment/are-you-still-working">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Job title
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [User entered content]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/employment/working-notice/job-title">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Employment start date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [User entered content]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/employment/working-notice/start-date">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  When does your notice period end?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [User entered content]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/employment/working-notice/end-date">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  How many weeks or months of your notice period are you being paid for?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [User entered content]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/employment/working-notice/notice-pay">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  What are your average weekly hours?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [User entered content]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/employment/working-notice/average-weekly-hours">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Your pay BEFORE tax and National Insurance
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [User entered content]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/employment/working-notice/pay">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Enter your pay AFTER tax and National Insurance
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [User entered content]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/employment/working-notice/pay">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Is this your weekly, monthly or annual pay?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Monthly
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/employment/working-notice/pay">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Did the respondent make any contributions to your pension?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Yes - £100
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/employment/working-notice/pension">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Do or did you receive any employee benefits?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Yes - [user entered content]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/employment/working-notice/benefits">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <h2 class="govuk-heading-m">Respondent 1 details</h2>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  UK Computers Ltd
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/respondents/respondent-1-name">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  1 Main Road, SW1 1AA
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/respondents/respondent-1-address">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Did you work at this address?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/respondents/did-you-work-respondent-address">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  What address did you work at?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  102 Main Road, SW1 1AA
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/respondents/where-did-you-work">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Do you have an Acas certificate number for this respondent?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/respondents/respondent-1-acas">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Why do you not have an Acas number?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Another person I’m making the claim with has an Acas early conciliation certificate number
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="/respondents/acas-number-reason">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <h2 class="govuk-heading-m">Claim details</h2>
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Desribe what happened to you
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [details entered by user]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="describe">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  What do you want from your claim?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Compensation
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="tell-us-what-you-want">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  What compensation are you seeking?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [Text entered by user]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="compensation">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Total compensation amount you are requesting
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  [£ entered by user]
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link govuk-link--no-visited-state" href="compensation">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+
+      <h3 class="govuk-heading-m">Submit your claim</h3>
+      <p class="govuk-body">Check all the answers you've provided and detials you have entered are correct.</p>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          This is your last opportunity to change any details before you submit your claim.
+        </strong>
+      </div>
+
+      <p class="govuk-body">Remember, if you’re not sure about anything, you can save and return to your claim at any time by selecting ‘Save for later’ at the bottom of this page.
+        <br><br>We’ll send you an email confirmation once you’ve submitted your claim.</p>
+
+      <div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Submit claim
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+      </div>
+
+      <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">Print this page</a> for your records.</p>
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

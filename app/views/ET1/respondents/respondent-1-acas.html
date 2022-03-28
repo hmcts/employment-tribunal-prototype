@@ -1,0 +1,80 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+<a href="#" class="govuk-back-link" onclick="history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="/respondent-acas-certificate-answer">
+
+      <h1 class="govuk-heading-xl">
+        Do you have an Acas certificate number for [respondent name]?
+      </h1>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="acas-hint">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="respondent-acas-number-1" name="respondent-acas-number" type="radio" value="Yes" data-aria-controls="conditional-acas-certificate-number">
+              <label class="govuk-label govuk-radios__label" for="respondent-acas-number-1">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-acas-certificate-number">
+              <div class="govuk-form-group">
+                <label class="govuk-heading-m" for="acas-certificate-number">
+                  Enter the Acas early conciliation certificate number
+                </label>
+                <p class=" govuk-label">Nearly everyone should have this number before they fill in a claim form. You can find it on your Acas certificate. Read more about the <a href="#">Acas early conciliation service (opens in a new tab)</a>.<br><br></p>
+                <input class="govuk-input govuk-!-width-two-thirds" id="acas-certificate-number" name="acas-certificate-number">
+              </div>
+
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="respondent-acas-number-2" name="respondent-acas-number" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="respondent-acas-number-2">
+                No
+              </label>
+            </div>
+          </div>
+
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+
+
+      <div class="govuk-button-group">
+
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Save and continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+      </div>
+    </form>
+    </div>
+  </div>
+
+{% endblock %}
