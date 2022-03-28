@@ -68,7 +68,7 @@ var answer = req.session.data['single-or-multiple']
 if (answer == "single"){
   res.redirect('/ET1/Acas')
 } if (answer == "multiple" ){
-  res.redirect('employmenttribunals.service.gov.uk/en/apply/application-number')
+  res.redirect('employmenttribunals.service.gov.uk/apply')
 }
 
 })
@@ -107,9 +107,141 @@ if (answer == "discrimination"){
 } if (answer == "pay" ){
   res.redirect('/ET1/claim-type-pay')
 } else {
+  res.redirect('legacy service')
+}
+
+})
+
+router.post('/reasonable-adjustments-answer', function (req,res) {
+
+var answer = req.session.data['reasonable-adjustments']
+
+if (answer == "I need documents in an alternative format"){
+  res.redirect('alternative docs')
+} else if (answer == "I need help communicating and understanding" ){
+  res.redirect('communicating')
+} else {
   res.redirect('/create-account')
 }
 
+})
+
+router.post('/did-you-work-routing', function (req,res) {
+
+var answer = req.session.data['did-you-work']
+
+if (answer == "yes"){
+  res.redirect('ET1/employment/are-you-still-working')
+} else if (answer == "no" ){
+  res.redirect('/ET1/task-list')
+
+}
+
+})
+
+router.post('/still-working-answer', function (req,res) {
+
+var answer = req.session.data['are-you-working']
+
+if (answer == "I’m still working for the respondent"){
+  res.redirect('ET1/employment/still-working/job-title')
+} if (answer == "I’m working a notice period for the respondent" ){
+  res.redirect('ET1/employment/working-notice/job-title')
+} if (answer == "I’m no longer working for the respondent" ){
+    res.redirect('ET1/employment/not-working/job-title')
+}
+
+})
+
+router.post('/working-notice-period-answer', function (req,res) {
+
+var answer = req.session.data['notice-period']
+
+if (answer == "yes"){
+  res.redirect('ET1/employment/still-working/notice-type')
+} else if (answer == "no" ){
+  res.redirect('/ET1/employment/still-working/average-weekly-hours')
+
+}
+
+})
+
+router.post('/not-working-notice-period-answer', function (req,res) {
+
+var answer = req.session.data['notice-period']
+
+if (answer == "yes"){
+  res.redirect('ET1/employment/not-working/notice-type')
+} else if (answer == "no" ){
+  res.redirect('/ET1/employment/not-working/average-weekly-hours')
+
+}
+
+})
+
+router.post('/not-working-new-job-answer', function (req,res) {
+
+var answer = req.session.data['new-job']
+
+if (answer == "yes"){
+  res.redirect('ET1/employment/not-working/new-job-start')
+} else if (answer == "no" ){
+  res.redirect('/ET1/task-list')
+
+}
+
+})
+
+
+router.post('/did-you-work-respondent-address-answer', function (req,res) {
+
+var answer = req.session.data['did-you-work-respondent-address']
+
+if (answer == "yes"){
+  res.redirect('ET1/respondents/respondent-1-acas')
+} else if (answer == "no" ){
+  res.redirect('ET1/respondents/where-did-you-work')
+
+}
+
+})
+
+router.post('/respondent-acas-certificate-answer', function (req,res) {
+
+var answer = req.session.data['respondent-acas-number']
+
+if (answer == "Yes"){
+  res.redirect('ET1/respondents/check-details')
+} else if (answer == "No" ){
+  res.redirect('ET1/respondents/acas-number-reason')
+
+}
+
+})
+
+router.post('/what-you-want-answer', function (req,res) {
+
+  var answer = req.session.data['what-you-want']
+
+  if (answer.includes("Compensation") && answer.includes("A tribunal recommendation")) {
+    res.redirect('both')
+  } if (answer.includes("Compensation")){
+    res.redirect('ET1/compensation')
+  }  if (answer.includes("A tribunal recommendation")){
+    res.redirect('ET1/recommendation')
+  } else {
+    res.redirect('other')
+  }
+})
+
+router.post('/check-your-answers-completed', function (req, res) {
+
+  var answer = req.session.data['checked']
+
+  if (answer != 'checked') {
+    req.session.data['checked'] = 'checked';
+    res.redirect('ET1/task-list')
+  }
 })
 
 

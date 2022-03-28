@@ -1,0 +1,54 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/ET1/your-details/address-2"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="contact-preference">
+      <h1 class="govuk-heading-xl">
+        What is your telephone number?
+      </h1>
+
+      <p class="govuk-body"> We'll use this to contact you if we have any questions about your claim.
+
+        <div class="govuk-form-group">
+          <label class="govuk-heading-m" for="claimant-telephone">
+            UK telephone number (optional)
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="claimant-telephone" name="claimant-telephone" type="text">
+        </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='/../ET1/claim-saved';">
+        Save for later
+      </button>
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}

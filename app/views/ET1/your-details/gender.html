@@ -1,0 +1,122 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/ET1/your-details/DOB"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="/ET1/your-details/address-1">
+      <h1 class="govuk-heading-xl">
+        Sex and gender identity
+      </h1>
+
+      <p class="govuk-body">These details will be used to help progress your claim.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <h2 class="govuk-fieldset__legend govuk-heading-m">
+           <b>What is your sex?</b>
+         </h2>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sex" name="sex" type="radio" value="female">
+              <label class="govuk-label govuk-radios__label" for="sex">
+                Female
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sex-2" name="sex" type="radio" value="male">
+              <label class="govuk-label govuk-radios__label" for="sex-2">
+                Male
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <h2 class="govuk-fieldset__legend govuk-heading-m">
+           <b>Is the gender you identify with the same as your sex registered at birth?</b>
+         </h2>
+         <p class="govuk-body">This question is voluntary.</p>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="gender-identity" name="gender-identity" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="gender-identity">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="gender-identity-2" name="gender-identity" type="radio" data-aria-controls="conditional-gender-identity-2">
+            <label class="govuk-label govuk-radios__label" for="gender-identity-2">
+            No
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-gender-identity-2">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="what-gender-identity">
+                What is your gender identity?
+              </label>
+              <input class="govuk-input govuk-!-width-one-third" id="gender-identity" name="gender-identity">
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-fieldset__legend govuk-heading-m">
+         <b>What is your preferred title?</b>
+       </h2>
+        <select class="govuk-select" id="title" name="title">
+          <option value="Please select" selected>Please select</option>
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Miss">Miss</option>
+          <option value="Ms">Ms</option>
+          <option value="Mx">Mx</option>
+          <option value="Other">Other</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+      </div>
+
+      <div class="govuk-form-group" id="other-title" hidden>
+        <label class="govuk-label" for="width-20">
+          What other title would you like?
+        </label>
+        <input class="govuk-input govuk-input--width-20" name="width-20" type="text">
+      </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='/../ET1/claim-saved';">
+        Save for later
+      </button>
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}

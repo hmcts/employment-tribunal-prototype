@@ -1,0 +1,53 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/ET1/employment/not-working/notice-type"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" action="average-weekly-hours">
+
+                <div class="govuk-form-group">
+                  <h1 class="govuk-heading-xl">
+                    How many {{ data['notice-type'] }} in your notice period?
+                  </h1>
+                  <label class="govuk-label" for="notice-length">
+                    For example, 4
+                  </label>
+                  <input class="govuk-input govuk-input--width-2" id="notice-length" name="notice-length" type="text">
+                </div>
+
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+    </form>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

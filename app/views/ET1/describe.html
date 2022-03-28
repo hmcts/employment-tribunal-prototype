@@ -1,0 +1,142 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "task-list"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="tell-us-what-you-want">
+      <h1 class="govuk-heading-xl">
+        Describe what happened to you
+      </h1>
+      <p class="govuk-body">This is your opportunity to explain why you are making a claim to an employment tribunal.<br><p/>
+      <p class="govuk-body">It’s important you focus on setting out what happened to you and explain, as far as you can, why you think what happened was unlawful.<br><p/>
+      <p class="govuk-body">Your claim will be sent to the respondents who will have a chance to reply through the tribunal.<br><p/>
+      <p class="govuk-body">The tribunal will then decide (usually via a hearing) whether the respondents have acted unlawfully.<br><p/>
+
+        <div class="govuk-inset-text">
+          We do not need detailed evidence, such as copies of emails, letters or other documents at this stage. Keep hold of these documents in case they are needed. You may need to bring them to a hearing..
+        </div>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What to write for discrimination claims
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Describe the events you are complaining about.
+            <br><br>Try to give the dates of the events (and set them out in date order) and the names of other people involved. Explain, as best you can, why you consider that these events mean that you have been unlawfully discriminated against, by reference to the protected characteristics you rely on.
+          </div>
+        </details>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What to write for dismissal claims
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Describe the circumstances of your dismissal.
+            <br><br>Try to give the dates of the events (like dismissal meetings) and the names of others involved (such as the person who dismissed you). You should explain, as best you can, why you consider that your dismissal was unfair.
+          </div>
+        </details>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What to write for whistleblower claims
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ol class="govuk-list govuk-list--number">
+              <li>Give the dates of each time you say you “blew the whistle” by making a protected disclosure. For each disclosure summarise the information you disclosed, whether it was done verbally or in writing, the person to whom you made the disclosure, what kind of wrongdoing you were disclosing, and why the disclosure was in the public interest.</li>
+              <li>Explain how you were treated detrimentally (which can include being dismissed) because of the disclosure(s), giving dates and summarising the incidents.</li>
+              <li>Give the names of the people involved in and witness to these events and incidents.</li>
+              <li>Describe how you’ve been affected by the detrimental treatment.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What to write for 'other' claims
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ol class="govuk-list govuk-list--number">
+              <li>The tribunal can only hear cases where legislation gives it power to do so. Explain briefly, if you can, what legislation you say covers this claim.</li>
+              <li>Even if you cannot, the most important thing is to explain what was done and, so far as you can, why you say it was unlawful.  Give dates and brief details of each incident, including the name of the person responsible.</li>
+            </ol>
+          </div>
+        </details>
+
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+            <div class="govuk-form-group">
+              <div id="with-hint-hint" class="govuk-hint">
+                Use this box to describe the events around your dispute, or add to your claim by uploading a document
+              </div>
+              <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="describe-what-happened" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+            </div>
+
+            <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+              You can enter up to 1000 characters
+            </div>
+
+        </div>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Or upload your summary as a separate document (optional)
+            </span>
+          </summary>
+            <div class="govuk-details__text">
+          <p class="govuk-body">You can only upload 1 document and it must be in one of the following text formats:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Word (.doc)</li>
+              <li>OpenDocument Format (.odf)</li>
+            </ul>
+
+              <label class="govuk-label" for="file-upload-1">
+                Upload a file
+              </label>
+              <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+            </div>
+
+        </details>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+      </div>
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

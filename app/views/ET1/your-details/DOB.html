@@ -1,0 +1,82 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/ET1/task-list"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="/ET1/your-details/gender"
+      <h1 class="govuk-heading-xl">
+        What is your date of birth?
+      </h1>
+
+      <p class="govuk-body">These details will be used to help progress your claim</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="DOB-hint">
+
+          <div id="DOB-hint" class="govuk-hint">
+            For example, 23 04 1981
+          </div>
+          <div class="govuk-date-input" id="DOB">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="DOB-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="DOB-day" name="DOB-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="DOB-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="DOB-month" name="DOB-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="DOB-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="DOB-year" name="DOB-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='/../ET1/claim-saved';">
+        Save for later
+      </button>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

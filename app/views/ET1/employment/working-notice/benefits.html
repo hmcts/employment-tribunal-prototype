@@ -1,0 +1,91 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/ET1/employment/working-notice/pension"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" action="/ET1/respondents/respondent-1-name">
+        <h1 class="govuk-heading-xl">Do or did you receive any employee benefits?</h1>
+        <p class="govuk-body">For example, child care, company car, housing, health insurance etc.</p>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What's classed as an employee benefits?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+          Employee benefits (also known as 'benefits in kind') are the various types of non-wage compensation you get on top of your normal wages.
+          </div>
+        </details>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="benefits-hint">
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="benefits" name="benefits" type="radio" value="Yes" data-aria-controls="conditional-benefits">
+                <label class="govuk-label govuk-radios__label" for="benefits">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-benefits">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="benefits-yes">
+                    Tell us about any benefits
+                  </label>
+                  <textarea class="govuk-textarea" id="benefits-detail" name="benefits-detail" rows="5" aria-describedby="benefits-detail-hint"></textarea>
+                </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="benefits" name="benefits" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="benefits">
+                    No
+                  </label>
+                </div>
+            </div>
+
+        </fieldset>
+      </div>
+
+      </div>
+
+
+
+
+    </div>
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+    </form>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

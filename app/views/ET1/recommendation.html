@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+<a href="#" class="govuk-back-link" onclick="history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="task-list">
+      <h1 class="govuk-heading-xl">
+        What tribunal recommendation request would you like to make?
+      </h1>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is a tribunal recommendation?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Depending on the nature and details of your claim, a tribunal can make a variety of recommendations and in the past included recommending:<br>
+          <br>
+          • employers review and update their equality and diversity policies<br>
+          • employees responsible for discrimination attend diversity and equality training<br><br>
+          • employers put a copy of a tribunal’s decision on their company noticeboard to make it clear to all employees a tribunal has decided discrimination has occurred
+        </div>
+      </details>
+
+      <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1000">
+          <div class="govuk-form-group">
+            <div id="with-hint-hint" class="govuk-hint">
+              Tell us what action you’d like a tribunal to recommend your respondents take to reduce the impact of any discrimination which has occurred.
+            </div>
+            <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="recommendation-request" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+          </div>
+
+          <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 1000 characters
+          </div>
+      </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+      </div>
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

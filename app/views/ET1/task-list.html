@@ -35,45 +35,45 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a class="govuk-link--no-visited-state" href="#" aria-describedby="personal-details">
+                <a class="govuk-link--no-visited-state" href="your-details/DOB" aria-describedby="personal-details">
                   Personal details
                 </a>
               </span>
             <!-- When DOB & Gender complete ><!-->
-            {% if data['gender'] and data['DOB'] %}<strong class="govuk-tag app-task-list__tag" id="contact-details-status">Completed</strong>{% endif %}
+            {% if data['title'] and data['DOB-day'] %}<strong class="govuk-tag app-task-list__tag" id="contact-details-status">Completed</strong>{% endif %}
             <!-- When DOB complete but not gender ><!-->
-            {% if data['DOB'] %}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>{% endif %}
+            {% if data['DOB-day'] and not data['title'] %}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>{% endif %}
             <!-- When not started ><!-->
-            {% if not data['DOB'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>{% endif %}
+            {% if not data['DOB-day'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>{% endif %}
             </li>
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a class="govuk-link--no-visited-state" href="#" aria-describedby="contact-details-status">
+                <a class="govuk-link--no-visited-state" href="your-details/address-1" aria-describedby="contact-details-status">
                   Contact details
                 </a>
               </span>
               <!-- When address & telephone complete ><!-->
-              {% if data['respondent-address'] and data['respondent-telephone'] %}<strong class="govuk-tag app-task-list__tag" id="contact-details-status">Completed</strong>{% endif %}
+              {% if data['claimant-address'] and data['claimant-telephone'] %}<strong class="govuk-tag app-task-list__tag" id="contact-details-status">Completed</strong>{% endif %}
               <!-- When address complete but not telephone ><!-->
-              {% if data['respondent-address'] %}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>{% endif %}
+              {% if data['claimant-address'] and not data['claimant-telephone']%}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>{% endif %}
               <!-- When not started ><!-->
-              {% if not data['respondent-address'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>{% endif %}
+              {% if not data['claimant-address'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="contact-details-status">Not started</strong>{% endif %}
 
             </li>
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a class="govuk-link--no-visited-state" href="#" aria-describedby="your-preferences-status">
+                <a class="govuk-link--no-visited-state" href="your-details/contact-preference" aria-describedby="your-preferences-status">
                   Your preferences
                 </a>
               </span>
               <!-- When contact preferences & video hearings & reasonable adjustments complete ><!-->
-              {% if data['contact-preferences'] and data['video-hearings'] and data['reasonable-adjustments'] %}<strong class="govuk-tag app-task-list__tag" id="your-preferences-status">Completed</strong>{% endif %}
+              {% if data['contact-preference'] and data['video-hearings'] and data['reasonable-adjustments'] %}<strong class="govuk-tag app-task-list__tag" id="your-preferences-status">Completed</strong>{% endif %}
               <!-- When contact or video hearings complete but not reasonable adjustments e.g. in progress ><!-->
-              {% if data['contact-preferences'] or data['video-hearings'] %}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="your-preferences-status">In progress</strong>{% endif %}
+              {% if data['contact-preference'] and not data['video-hearings'] and data['reasonable-adjustments'] %}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="your-preferences-status">In progress</strong>{% endif %}
               <!-- When not started ><!-->
-              {% if not data['contact-preferences'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="your-preferences-status">Not started</strong>{% endif %}
+              {% if not data['contact-preference'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="your-preferences-status">Not started</strong>{% endif %}
 
             </li>
           </ul>
@@ -86,30 +86,30 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a class="govuk-link--no-visited-state" href="#" aria-describedby="employment-status">
+                <a class="govuk-link--no-visited-state" href="employment/did-you-work" aria-describedby="employment-status">
                   Employment status
                 </a>
               </span>
+            <!-- When never worked so complete ><!-->
+            {% if data['did-you-work'] === 'X' %}<strong class="govuk-tag app-task-list__tag" id="employment-status-status">Completed</strong>{% endif %}
             <!-- When all complete ><!-->
-            {% if data['current-employment-status'] === 'never worked' %}<strong class="govuk-tag app-task-list__tag" id="employment-status-status">Completed</strong>{% endif %}
-            <!-- When all complete ><!-->
-            {% if data['current-employment-status'] and data['benefits'] %}<strong class="govuk-tag app-task-list__tag" id="employment-status-status">Completed</strong>{% endif %}
+            {% if data['benefits'] %}<strong class="govuk-tag app-task-list__tag" id="employment-status-status">Completed</strong>{% endif %}
             <!-- When started - current employment status identified ><!-->
             {% if data['current-employment-status'] %}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="employment-status-status">In progress</strong>{% endif %}
             <!-- When not started ><!-->
-            {% if not data['current-employment-status'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="employment-status-status">Not started</strong>{% endif %}
+            {% if not data['did-you-work'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="employment-status-status">Not started</strong>{% endif %}
             </li>
 
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a class="govuk-link--no-visited-state" href="#" aria-describedby="Respondent-details-status">
+                <a class="govuk-link--no-visited-state" href="respondents/respondent-1-name" aria-describedby="Respondent-details-status">
                   Respondent details
                 </a>
               </span>
               <!-- When completed ><!-->
-              {% if data['respondents-added'] %}<strong class="govuk-tag app-task-list__tag" id="respondent-details-status">Completed</strong>{% endif %}
+              {% if data['respondent-acas-number'] %}<strong class="govuk-tag app-task-list__tag" id="respondent-details-status">Completed</strong>{% endif %}
               <!-- when in progress ><!-->
-              {% if data['respondent-1-name'] %}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="respondent-details-status">In progress</strong>{% endif %}
+              {% if data['respondent-1-name'] and not data['respondent-acas-number']  %}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="respondent-details-status">In progress</strong>{% endif %}
               <!-- When not started ><!-->
               {% if not data['respondent-1-name'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="respondent-details-status">Not started</strong>{% endif %}
 
@@ -126,16 +126,27 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a class="govuk-link--no-visited-state" href="#" aria-describedby="Describe-status">
+                <a class="govuk-link--no-visited-state" href="describe" aria-describedby="Describe-status">
                   Describe what happened to you
                 </a>
               </span>
               <!-- When completed ><!-->
-              {% if data['what-you-want'] %}<strong class="govuk-tag app-task-list__tag" id="Describe-status">Completed</strong>{% endif %}
-              <!-- when in progress ><!-->
-              {% if data['describe-what-happened'] %}<strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="Describe-status">In progress</strong>{% endif %}
+              {% if data['describe-what-happened'] %}<strong class="govuk-tag app-task-list__tag" id="Tell-us-status">Completed</strong>{% endif %}
               <!-- When not started ><!-->
               {% if not data['describe-what-happened'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="Describe-status">Not started</strong>{% endif %}
+
+            </li>
+
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link--no-visited-state" href="tell-us-what-you-want" aria-describedby="Tell-us-status">
+                  Tell us what you want from your claim
+                </a>
+              </span>
+              <!-- When completed ><!-->
+              {% if data['recommendation-request'] %}<strong class="govuk-tag app-task-list__tag" id="Describe-status">Completed</strong>{% endif %}
+              <!-- When not started ><!-->
+              {% if not data['recommendation-request'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="Describe-status">Not started</strong>{% endif %}
 
             </li>
           </ul>
@@ -150,7 +161,7 @@
               <span class="app-task-list__task-name">
                 <!-- can start -->
                 {% if  data['what-you-want'] %}
-                <a class="govuk-link--no-visited-state" href="#" aria-describedby="Check-status">
+                <a class="govuk-link--no-visited-state" href="check-your-answers" aria-describedby="Check-status">
                   Check your answers
                 </a>{% endif %}
                 <!-- cannot start -->
@@ -158,20 +169,18 @@
                   Check your answers
                 {% endif %}
               </span>
-              <!-- When completed -->
-              {% if data['checked'] %}<strong class="govuk-tag app-task-list__tag" id="Check-status">Completed</strong>{% endif %}
+
+              <!-- When can't start yet -->
               {% if not data['what-you-want'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="Check-status-status">Cannot start yet</strong>{% endif %}
+              <!-- When can start -->
+              {% if data['what-you-want'] %}<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="Describe-status">Not started</strong>{% endif %}
+
             </li>
           </ul>
         </li>
       </ol>
 
       <div class="govuk-button-group">
-      {% if data['checked'] %}
-      <button class="govuk-button" data-module="govuk-button" type="submit">
-        Continue
-      </button>
-      {% endif %}
 
       <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
         Save for later

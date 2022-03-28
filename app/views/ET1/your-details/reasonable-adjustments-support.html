@@ -1,0 +1,131 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+<a href="#" class="govuk-back-link" onclick="history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="#">
+      <h1 class="govuk-heading-xl">I would need to bring support with me to a tribunal hearing</h1>
+
+      <p class="govuk-body">
+      Think about what you would need if the hearing was in person, by phone or video.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="support-hint">
+          <div id="documents-hint" class="govuk-hint">
+            Select all that apply to you
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="support-carer" name="support" type="checkbox" value="A support worker or carer" data-aria-controls="conditional-support-carer">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-carer">
+                    A support worker or carer
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-support-carer">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="conditional-support-carer">
+                      [Label]
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="support-carer" name="support-carer" >
+                  </div>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="support-friend" name="support" type="checkbox" value="A friend or family member" data-aria-controls="conditional-support-friend">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-friend">
+                    A friend or family member
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-support-friend">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="conditional-support-friend">
+                      [Label]
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="support-friend" name="support-friend" >
+                  </div>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="support-dog" name="support" type="checkbox" value="Assistance / guide dog" data-aria-controls="conditional-support-dog">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-dog">
+                    Assistance / guide dog
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="support-animal" name="support" type="checkbox" value="Therapy animal" data-aria-controls="conditional-support-animal">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-animal">
+                    Therapy animal
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="support-other" name="support" type="checkbox" value="Other" data-aria-controls="conditional-support-other">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-other">
+                    Other
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-support-other">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="conditional-support-other">
+                      Please describe what you need
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="support-other" name="support-other" >
+                  </div>
+                </div>
+
+
+
+                <div class="govuk-checkboxes__divider">or</div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="support-no" name="support" type="checkbox" value="I do not need any of this support at this time" data-behaviour="exclusive">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-no">
+                    I do not need any of this support at this time
+                  </label>
+                </div>
+              </div>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='/../ET1/claim-saved';">
+        Save for later
+      </button>
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}

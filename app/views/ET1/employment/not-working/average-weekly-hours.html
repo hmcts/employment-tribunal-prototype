@@ -1,0 +1,51 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "/ET1/employment/not-working/notice-length"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" action="pay">
+
+        <h1 class="govuk-heading-xl">What were your average weekly hours?</h1>
+        <p class="govuk-body">If the number of hours you worked changed each week (for example, if you had a zero-hours contract), use your final 3 months of payslips to work out your weekly average.
+          <br><br>Do not include overtime hours. <br><br>
+
+          <input class="govuk-input govuk-input--width-2 govuk-!-margin-bottom-5" id="notice-length" name="average-weekly-hours" type="text">
+
+
+
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
+        Save for later
+      </button>
+    </form>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
