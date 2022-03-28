@@ -1,0 +1,153 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+<a href="#" class="govuk-back-link" onclick="history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="#">
+      <h1 class="govuk-heading-xl">I need help travelling to, or moving around tribunal buildings</h1>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="support-hint">
+          <div id="documents-hint" class="govuk-hint">
+            Select all that apply to you
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="travel-parking" name="travel" type="checkbox" value="Appropriate lighting" data-aria-controls="conditional-support-lighting">
+                  <label class="govuk-label govuk-checkboxes__label" for="travel-parking">
+                    Parking space close to the venue
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-support-lighting">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="conditional-support-lighting">
+                      Describe why you need this
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="travel-parking-description" name="support-lighting" >
+                  </div>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="travel-step" name="travel" type="checkbox" value="Regular breaks" data-aria-controls="conditional-support-breaks">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-breaks">
+                    Step free / wheelchair access
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="travel-wheelchair" name="travel" type="checkbox" value="Space to be able to get up and move around" data-aria-controls="conditional-support-space">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-Space">
+                    Use of venue wheelchair
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="travel-toilet" name="travel" type="checkbox" value="Space to be able to get up and move around" data-aria-controls="conditional-support-space">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-Space">
+                    Accessible toilet
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="travel-lift" name="travel" type="checkbox" value="Space to be able to get up and move around" data-aria-controls="conditional-support-space">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-Space">
+                    Help using a lift
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="travel-chair" name="travel" type="checkbox" value="Appropriate lighting" data-aria-controls="conditional-support-chair">
+                  <label class="govuk-label govuk-checkboxes__label" for="travel-chair">
+                    A different type of chair
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-support-chair">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="conditional-support-chair">
+                      Describe what you need
+                    </label>
+                    <div id="account-number-hint" class="govuk-hint">
+                        For example, a chair with back support
+                      </div>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="travel-lighting" name="support-lighting" >
+                  </div>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="travel-lift" name="travel" type="checkbox" value="Space to be able to get up and move around" data-aria-controls="conditional-support-space">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-Space">
+                    Guiding in the building
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="travel-other" name="travel" type="checkbox" value="Other" data-aria-controls="conditional-support-other">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-other">
+                    Other
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-support-other">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="conditional-support-other">
+                      Describe what you need
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="travel-other" name="support-other" >
+                  </div>
+                </div>
+
+
+
+                <div class="govuk-checkboxes__divider">or</div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="travel-no" name="travel" type="checkbox" value="I do not need any of this support at this time" data-behaviour="exclusive">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-no">
+                    I do not need any of this support at this time
+                  </label>
+                </div>
+              </div>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='/../ET1/claim-saved';">
+        Save for later
+      </button>
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}

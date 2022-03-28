@@ -1,0 +1,117 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+<a href="#" class="govuk-back-link" onclick="history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="#">
+      <h1 class="govuk-heading-xl">I need something to make me feel comfortable during a tribunal hearing</h1>
+
+      <p class="govuk-body">
+      Think about what you’ll need if your hearing is in person, by video or phone.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="support-hint">
+          <div id="documents-hint" class="govuk-hint">
+            Select all that apply to you
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="comfort-carer" name="comfort" type="checkbox" value="Appropriate lighting" data-aria-controls="conditional-support-lighting">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-lighting">
+                    Appropriate lighting
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-support-lighting">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="conditional-support-lighting">
+                      Describe what you need
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="comfort-lighting" name="support-lighting" >
+                  </div>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="comfort-breaks" name="comfort" type="checkbox" value="Regular breaks" data-aria-controls="conditional-support-breaks">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-breaks">
+                    Regular breaks
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="comfort-Space" name="comfort" type="checkbox" value="Space to be able to get up and move around" data-aria-controls="conditional-support-space">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-Space">
+                    Space to be able to get up and move around
+                  </label>
+                </div>
+
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="comfort-other" name="comfort" type="checkbox" value="Other" data-aria-controls="conditional-support-other">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-other">
+                    Other
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-support-other">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="conditional-support-other">
+                      Describe what you need
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="comfort-other" name="support-other" >
+                  </div>
+                </div>
+
+
+
+                <div class="govuk-checkboxes__divider">or</div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="comfort-no" name="comfort" type="checkbox" value="I do not need any of this support at this time" data-behaviour="exclusive">
+                  <label class="govuk-label govuk-checkboxes__label" for="support-no">
+                    I do not need any of this support at this time
+                  </label>
+                </div>
+              </div>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='/../ET1/claim-saved';">
+        Save for later
+      </button>
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}
