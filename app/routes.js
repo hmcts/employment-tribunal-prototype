@@ -116,12 +116,12 @@ router.post('/claim-type-answer', function (req,res) {
 
   var answer = req.session.data['claim-type']
 
-  if (answer.includes("discrimination") && answer.includes("pay")) {
-    res.redirect('/ET1/claim-type-discrimination')
-  } if (answer.includes("discrimination")){
-    res.redirect('ET1/claim-type-discrimination')
-  }  if (answer.includes("pay")){
-    res.redirect('ET1/claim-type-pay')
+  if (answer.includes("discrimination")){
+    res.redirect('ET1/create-account')
+  }  if (answer.includes("whistleblowing")){
+    res.redirect('ET1/create-account')
+  } else {
+    res.redirect('legacy-service')
   }
 })
 
@@ -132,7 +132,7 @@ router.post('/discrimination-routing-answer', function (req,res) {
   if (answer.includes("pay")) {
     res.redirect('/ET1/claim-type-pay')
   } else {
-    res.redirect('create-account')
+    res.redirect('/ET1/create-account')
   }
 })
 
@@ -235,13 +235,24 @@ router.post('/what-you-want-answer', function (req,res) {
   var answer = req.session.data['what-you-want']
 
   if (answer.includes("Compensation") && answer.includes("A tribunal recommendation")) {
-    res.redirect('both')
+    res.redirect('ET1/compensation')
   } if (answer.includes("Compensation")){
     res.redirect('ET1/compensation')
   }  if (answer.includes("A tribunal recommendation")){
     res.redirect('ET1/recommendation')
   } else {
     res.redirect('other')
+  }
+})
+
+router.post('/compensation-answer', function (req,res) {
+
+  var answer = req.session.data['what-you-want']
+
+  if (answer.includes("A tribunal recommendation")) {
+    res.redirect('ET1/recommendation')
+  } else {
+    res.redirect('ET1/task-list')
   }
 })
 

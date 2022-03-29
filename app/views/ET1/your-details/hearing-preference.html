@@ -58,12 +58,20 @@
 
               <div class="govuk-checkboxes__divider">or</div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="video-hearings-5" name="video-hearings" type="checkbox" value="No, I cannot take part in either video or phone hearings" data-behaviour="exclusive">
+                <input class="govuk-checkboxes__input" id="video-hearings-5" name="video-hearings" type="checkbox" value="No, I cannot take part in either video or phone hearings" data-behaviour="exclusive" data-aria-controls="conditional-no-hearings">
                 <label class="govuk-label govuk-checkboxes__label" for="video-hearings-5">
                   No, I cannot take part in either video or phone hearings
                 </label>
                 <div id="video-hearings-5-hint" class="govuk-hint govuk-checkboxes__hint">
                     If you choose this option please tell us why in case we can assist you
+                  </div>
+
+                  <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-no-hearings">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-email">
+                      Explain why you are unable to take part in video or phone hearings
+                    </label>
+                    <input class="govuk-input govuk-!-width-full" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false" autocomplete="email">
                   </div>
 
 
@@ -83,7 +91,7 @@
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Need help filling out this form? Contact us
+            Contact us
           </span>
         </summary>
         <div class="govuk-details__text">
