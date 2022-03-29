@@ -19,6 +19,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="/trusted-helper-answer">
       <h1 class="govuk-heading-xl">
         Did you need someone to help you fill in our online form?
       </h1>
@@ -29,82 +30,21 @@
 
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+              <input class="govuk-radios__input" id="trusted-helper" name="trusted-helper" type="radio" value="Yes">
               <label class="govuk-label govuk-radios__label" for="contact">
                 Yes
               </label>
             </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-              <h3 class="govuk-heading-s">Who helped you?</h3>
-              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                  <label class="govuk-label govuk-checkboxes__label" for="waste">
-                    A friend or family member
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                  <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                    Someone who worked for the Employment Tribunal or HM Courts & Tribunals Service (HMCTS)
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
-                  <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                    Someone from another organisation
-                  </label>
-                </div>
-              </div>
-              <h3 class="govuk-heading-s">What did they help you with?</h3>
-              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                  <label class="govuk-label govuk-checkboxes__label" for="waste">
-                    Entering details and using the service - I'm not confident using computers
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                  <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                    Advice on how to answer questions about my claim
-                  </label>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
-                  <label class="govuk-label govuk-checkboxes__label" for="waste-3">
-                    Writing the actual details for my claim
-                  </label>
-                </div>
-                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                   <div class="govuk-checkboxes__item">
-                     <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
-                     <label class="govuk-label govuk-checkboxes__label" for="contact">
-                       Email
-                     </label>
-                   </div>
-                   <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
-                     <div class="govuk-form-group">
-                       <label class="govuk-label" for="contact-by-email">
-                         Email address
-                       </label>
-                       <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false" autocomplete="email">
-                     </div>
-                   </div>
-              </div>
-              </div>
-
-            </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+              <input class="govuk-radios__input" id="trusted-helper-2" name="trusted-helper" type="radio" value="No">
               <label class="govuk-label govuk-radios__label" for="contact-2">
                 No
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
-              <label class="govuk-label govuk-radios__label" for="contact-3">
+              <input class="govuk-radios__input" id="trusted-helper-3" name="trusted-helper" type="radio" value="Prefer not to say">
+              <label class="govuk-label govuk-radios__label" for="trusted-helper-3">
                 Prefer not to say
               </label>
             </div>
@@ -113,16 +53,13 @@
           </div>
         </div>
         </fieldset>
-
+</div>
 
       <div class="govuk-button-group">
       <button class="govuk-button" data-module="govuk-button" type="submit">
         Continue
       </button>
 
-      <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
-        Save for later
-      </button>
       </div>
 
     </div>

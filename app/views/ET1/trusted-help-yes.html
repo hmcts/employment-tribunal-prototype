@@ -1,0 +1,151 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="/trusted-helper-answer">
+      <h1 class="govuk-heading-xl">
+        Tell us more about the help you needed
+      </h1>
+      <p class="govuk-body">We want to find out about the kind of help and support people need so we can help improve our services for others.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="trusted-helper-who-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+              Who helped you?
+
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="trusted-helper-who" name="trusted-helper-who" type="checkbox" value="email" data-aria-controls="conditional-trusted-helper-who">
+              <label class="govuk-label govuk-checkboxes__label" for="trusted-helper-who">
+                A friend or family
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-trusted-helper-who">
+              <div class="govuk-form-group">
+
+              </div>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="trusted-helper-who-2" name="trusted-helper-who" type="checkbox" value="phone" data-aria-controls="conditional-trusted-helper-who-2">
+              <label class="govuk-label govuk-checkboxes__label" for="trusted-helper-who-2">
+                Someone who worked for the Employment Tribunal or HM Courts & Tribunals Service (HMCTS)
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-trusted-helper-who-2">
+              <div class="govuk-form-group">
+
+              </div>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="trusted-helper-who-3" name="trusted-helper-who" type="checkbox" value="text message" data-aria-controls="conditional-trusted-helper-who-3">
+              <label class="govuk-label govuk-checkboxes__label" for="trusted-helper-who-3">
+                Someone from another organisation
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-trusted-helper-who-3">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="trusted-helper-who-by-text">
+                  Which organisation did they work for?
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="trusted-helper-who-by-text" name="trusted-helper-who-by-text" type="tel" autocomplete="tel">
+              </div>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="trusted-helper-who-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+              What did they help you with?
+
+          </legend>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="trusted-helper-what" name="trusted-helper-what" type="checkbox" value="email" data-aria-controls="conditional-trusted-helper-what">
+              <label class="govuk-label govuk-checkboxes__label" for="trusted-helper-what">
+                Entering details and using the service - I'm not confident using computers
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-trusted-helper-what">
+              <div class="govuk-form-group">
+
+              </div>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="trusted-helper-what-2" name="trusted-helper-what" type="checkbox" value="phone" data-aria-controls="conditional-trusted-helper-what-2">
+              <label class="govuk-label govuk-checkboxes__label" for="trusted-helper-what-2">
+                Advice on how to answer questions about my claim
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-trusted-helper-what-2">
+              <div class="govuk-form-group">
+
+              </div>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="trusted-helper-what-3" name="trusted-helper-what" type="checkbox" value="text message" data-aria-controls="conditional-trusted-helper-what-3">
+              <label class="govuk-label govuk-checkboxes__label" for="trusted-helper-what-3">
+                Writing the actual details for my claim
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="trusted-helper-what-3" name="trusted-helper-what" type="checkbox" value="text message" data-aria-controls="conditional-trusted-helper-what-3">
+              <label class="govuk-label govuk-checkboxes__label" for="trusted-helper-what-3">
+                Something else
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-trusted-helper-what-3">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="trusted-helper-what-by-text">
+                  What did they help you with?
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="trusted-helper-what-by-text" name="trusted-helper-what-by-text" type="tel" autocomplete="tel">
+              </div>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+
+
+
+
+      <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Finish
+      </button>
+
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

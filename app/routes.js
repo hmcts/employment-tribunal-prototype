@@ -245,13 +245,15 @@ router.post('/what-you-want-answer', function (req,res) {
   }
 })
 
-router.post('/check-your-answers-completed', function (req, res) {
 
-  var answer = req.session.data['checked']
+router.post('/trusted-helper-answer', function (req, res) {
 
-  if (answer != 'checked') {
-    req.session.data['checked'] = 'checked';
-    res.redirect('ET1/task-list')
+  var answer = req.session.data['trusted helper']
+
+  if (answer = "Yes"){
+    res.redirect('ET1/trusted-help-yes')
+  } else {
+    res.redireect('index')
   }
 })
 
