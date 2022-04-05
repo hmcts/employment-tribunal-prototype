@@ -26,12 +26,15 @@
       <form method="post" action="hearing-preference">
         <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="contact-preference-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-          <h1 class="govuk-fieldset__heading">
+
+          <h1 class="govuk-heading-xl">
             How would you like to be contacted about your claim?
           </h1>
-        </legend>
+
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <h2 class="govuk-heading-m">
+            What format would you like to be contacted in?
+          </h2>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="contact-preference" name="contact-preference" type="radio" value="Email">
             <label class="govuk-label govuk-radios__label" for="contact-preference">
@@ -42,6 +45,26 @@
             <input class="govuk-radios__input" id="contact-preference-2" name="contact-preference" type="radio" value="Post">
             <label class="govuk-label govuk-radios__label" for="contact-preference-2">
               Post
+            </label>
+          </div>
+        </div>
+
+<br>
+
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <h2 class="govuk-heading-m">
+            Which language would you like to be contacted in?
+          </h2>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-language" name="contact-language" type="radio" value="english">
+            <label class="govuk-label govuk-radios__label" for="contact-language">
+              English
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-language-2" name="contact-language" type="radio" value="welsh">
+            <label class="govuk-label govuk-radios__label" for="contact-language-2">
+              Welsh
             </label>
           </div>
         </div>
