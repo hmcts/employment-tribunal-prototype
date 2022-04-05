@@ -15,27 +15,40 @@
 
 {{ govukBackLink({
   text: "Back",
-  href: "/ET1/your-details/address-2"
+  href: "/ET1/employment/still-working/notice-period"
 }) }}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="contact-preference">
-      <h1 class="govuk-heading-xl">
-        What is your telephone number? (optional)
-      </h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" action="notice-pay">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="notice-period-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  Is your notice period in weeks or months?
+                </h1>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="notice-type" name="notice-type" type="radio" value="weeks">
+                  <label class="govuk-label govuk-radios__label" for="notice-type">
+                    Weeks
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="notice-type-2" name="notice-type" type="radio" value="months">
+                  <label class="govuk-label govuk-radios__label" for="notice-type-2">
+                    Months
+                  </label>
+                </div>
+              </div>
 
-      <p class="govuk-body"> We'll use this to contact you if we have any questions about your claim.
+            </fieldset>
+          </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-heading-m" for="claimant-telephone">
-            Enter your mobile or home phone number
-          </label>
-          <input class="govuk-input govuk-input--width-20" id="claimant-telephone" name="claimant-telephone" type="text">
-        </div>
 
       <div class="govuk-button-group">
         <button class="govuk-button" data-module="govuk-button" type="submit">
@@ -45,6 +58,7 @@
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button" onclick="window.location.href='claim-saved';">
           Save as draft
         </button>
+    </form>
       </div>
 
             <details class="govuk-details" data-module="govuk-details">
@@ -70,6 +84,5 @@
 
     </div>
   </div>
-
 
 {% endblock %}
