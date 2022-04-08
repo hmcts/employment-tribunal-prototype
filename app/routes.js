@@ -16,7 +16,7 @@ const path = require('path')
       res.redirect('/number')
     } else {
       // Send user to ineligible page
-      res.redirect('/account')
+      res.redirect('/existing-claim/sign-in')
     }
 
   })
