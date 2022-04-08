@@ -1,0 +1,51 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'Your <a class="govuk-link--no-visited-state" href="#">feedback</a> helps us to improve this service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="drafts">
+      <h1 class="govuk-heading-xl">
+        Sign in to your Employment Tribunal account
+      </h1>
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="enter-email-address">
+            Email address
+          </label>
+        </h1>
+        <input class="govuk-input govuk-input--width-20" id="enter-email-address" name="enter-email-address" type="">
+      </div>
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="enter-password">
+            Password
+          </label>
+        </h1>
+        <input class="govuk-input govuk-input--width-20" id="enter-password" name="enter-password" type="password">
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </div>
+
+    </div>
+  </div>
+
+{% endblock %}
