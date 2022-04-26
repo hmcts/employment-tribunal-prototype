@@ -21,39 +21,85 @@
     <div class="govuk-grid-column-full">
       <form method="post" action="drafts">
       <h1 class="govuk-heading-xl">
-        ET1 Form Drafts
+        ET1 Applications
       </h1>
+
+      <p><a href="/index" class="govuk-link--no-visited-state">Start a new claim</a></p>
+
+
+      <h2 class="govuk-heading-l">
+        Draft applications
+      </h2>
       <p class="govuk-body">Draft cases are available to continue for [x] days from date created.</p>
 
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Date created</th>
+            <th scope="col" class="govuk-table__header">Reference</th>
             <th scope="col" class="govuk-table__header">Type of claim</th>
             <th scope="col" class="govuk-table__header">Respondents</th>
             <th scope="col" class="govuk-table__header">Completion status</th>
+            <th scope="col" class="govuk-table__header">Date last modified</th>
             <th scope="col" class="govuk-table__header">Options</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">1 September 2022</td>
+            <td class="govuk-table__cell">ABC123</td>
             <td class="govuk-table__cell">Discrimination of any type<br>Unfair dismissal</td>
             <td class="govuk-table__cell">Not yet provided</td>
             <td class="govuk-table__cell">0 of 4 tasks completed</td>
+            <td class="govuk-table__cell">22 September 2022</td>
             <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="/ET1/task-list">Continue</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">21 August 2022</td>
+            <td class="govuk-table__cell">ABC124</td>
             <td class="govuk-table__cell">Whistleblowing</td>
             <td class="govuk-table__cell">UK Computers Ltd</td>
             <td class="govuk-table__cell">3 of 4 tasks completed</td>
+            <td class="govuk-table__cell">22 August 2022</td>
             <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="/ET1/task-list">Continue</a></td>
           </tr>
         </tbody>
       </table>
 
-      <p><a href="/index" class="govuk-link--no-visited-state">Start a new claim</a></p>
+      <h2 class="govuk-heading-l">
+        Submitted applications
+      </h2>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date submitted</th>
+            <th scope="col" class="govuk-table__header">Reference</th>
+            <th scope="col" class="govuk-table__header">Type of claim</th>
+            <th scope="col" class="govuk-table__header">Respondents</th>
+            <th scope="col" class="govuk-table__header">Date last modified</th>
+            <th scope="col" class="govuk-table__header">Options</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">15 August 2022</td>
+            <td class="govuk-table__cell">ET11AA</td>
+            <td class="govuk-table__cell">Discrimination of any type</td>
+            <td class="govuk-table__cell">Apple Inc.</td>
+            <td class="govuk-table__cell">26 August 2022</td>
+            <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="/ET1/task-list">View</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">5 August 2022</td>
+            <td class="govuk-table__cell">ET1123</td>
+            <td class="govuk-table__cell">Unfair dismissal</td>
+            <td class="govuk-table__cell">Springfield Power Plant</td>
+            <td class="govuk-table__cell">10 August 2022</td>
+            <td class="govuk-table__cell"><a class="govuk-link--no-visited-state" href="/ET1/task-list">View</a></td>
+          </tr>
+        </tbody>
+      </table>
 
     </div>
   </div>
