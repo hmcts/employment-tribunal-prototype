@@ -18,131 +18,239 @@
       <!-- Heading and progress bar -->
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-          <h1 class="govuk-heading-xl" style="margin-bottom: 2px;">Claimant vs Respondent</h1>
-          <p class="govuk-body">Claim reference: 12345678/1234</p>
+          <h1 class="govuk-heading-xl" style="margin-bottom: 2px;">Case overview - Pablo Jimenez v Redde Ltd</h1>
+          <p class="govuk-body">Case number 123456/2022</p>
         </div>
 
         <div class="govuk-grid-column-two-thirds">
           <hr class="overview-border">
+          <div class="hmcts-progress-bar-vertical  govuk-!-margin-top-4" role="progressbar">
+                  <ol class="hmcts-progress-bar__list">
+                    <li class="hmcts-progress-bar__list-item">
+                      <span class="hmcts-progress-bar__icon hmcts-progress-bar__icon--complete"></span>
+                      <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Current Step 1: </span>Claim accepted</span>
+                    </li>
+                    <li class="hmcts-progress-bar__list-item">
+                      <span class="hmcts-progress-bar__icon"></span>
+                      <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Step 2: </span>Response received</span>
+                    </li>
+                    <li class="hmcts-progress-bar__list-item">
+                      <span class="hmcts-progress-bar__icon"></span>
+                      <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Step 3: </span>Your hearing details</span>
+                    </li>
+                    <li class="hmcts-progress-bar__list-item">
+                      <span class="hmcts-progress-bar__icon"></span>
+                      <span class="hmcts-progress-bar__label"><span class="govuk-visually-hidden">Step 4: </span>Your claim decision</span>
+                    </li>
+                  </ol>
+                </div>
 
-          <div class="hmcts-progress-bar govuk-!-margin-top-5" style="margin-left: -35px;">
-            <ol class="hmcts-progress-bar__list">
-              <li class="hmcts-progress-bar__list-item">
-                <span class="hmcts-progress-bar__icon--complete"></span>
-                <span class="hmcts-progress-bar__label">ET1 claim submitted</span>
-              </li>
-
-              <li class="hmcts-progress-bar__list-item">
-                <span class="hmcts-progress-bar__icon--complete"></span>
-                <span class="hmcts-progress-bar__label">Respondent response</span>
-              </li>
-
-              <li class="hmcts-progress-bar__list-item" aria-current="step">
-                <span class="hmcts-progress-bar__icon"></span>
-                <span class="hmcts-progress-bar__label">Case listed</span>
-              </li>
-
-              <li class="hmcts-progress-bar__list-item">
-                <span class="hmcts-progress-bar__icon"></span>
-                <span class="hmcts-progress-bar__label">Preliminary hearing</span>
-              </li>
-
-              <li class="hmcts-progress-bar__list-item">
-                <span class="hmcts-progress-bar__icon"></span>
-                <span class="hmcts-progress-bar__label">Final hearing</span>
-              </li>
-            </ol>
-          </div>
 
           <!-- Main body -->
-          <h1 class="govuk-heading-m">Do this next</h1>
-          <div class="action-panel">
-            <p class="govuk-body">
-              A date has been booked for your hearing.<br><br>
-              Here are the details:<br><br>
 
-              <b>Date</b>: 4 May 2022<br>
-              <b>Time</b>: 10am<br>
-              <b>Location</b>: Taylor House<br><br>
+          <ol class="app-task-list">
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number"> About you</span>
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="View and edit your personal details">
+                      View and edit your personal details
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--green" id="eligibility-status" style="text-transform: capitalize">Completed</strong>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">Your claim</span>
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="Your ET1 claim form">
+                      Your ET1 claim form
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--turquoise dashboard-tags" id="eligibility-status">Submitted</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="Acknowledgment of claim letter">
+                      Acknowledgment of claim letter
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--turquoise dashboard-tags" id="eligibility-status">Viewed</strong>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">The response</span>
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="Response from the respondent (ET3)">
+                      Response from the respondent (ET3)
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--turquoise dashboard-tags" id="eligibility-status">Viewed</strong>
+                </li>
+              </ul>
+            </li>
 
-              Your Notice of Hearing is now available to view. It includes more information about the court hearing, including the hearing centre address.<br>
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">Your hearings</span>
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a style="pointer-events: none; text-decoration: none" aria-describedby="View details of your hearings">
+                      View details of your hearings
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--grey dashboard-tags" id="eligibility-status">Not available yet</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a style="pointer-events: none; text-decoration: none" aria-describedby="Submit hearing agenda">
+                      Submit hearing agenda
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--grey dashboard-tags" id="eligibility-status">Cannot start yet</strong>
+                </li>
+              </ul>
+            </li>
 
-              <h4 class="govuk-heading-s">Useful documents</h4>
-              <a class="govuk-body govuk-link" href="#">Notice of hearing</a>
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">Requests to the tribunal</span>
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a style="pointer-events: none; text-decoration: none" aria-describedby="Your requests and applications">
+                      Your requests and applications
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--grey dashboard-tags" id="eligibility-status">Not available yet</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a style="pointer-events: none; text-decoration: none" aria-describedby="Respondent's requests">
+                      Respondent's requests
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--grey dashboard-tags" id="eligibility-status">Not available yet</strong>
+                </li>
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="Contact the tribunal about your case">
+                      Contact the tribunal about your case
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--blue dashboard-tags" id="eligibility-status">Optional</strong>
+                </li>
+              </ul>
+            </li>
 
-              <h4 class="govuk-heading-s govuk-!-margin-top-5">Helpful information</h4>
-              <a class="govuk-body govuk-link" href="#">What to expect at a hearing</a>
-          </div>
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">Orders from the court</span>
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a style="pointer-events: none; text-decoration: none" aria-describedby="All orders issued by the court">
+                      All orders issued by the court
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--grey dashboard-tags" id="eligibility-status">Not available yet</strong>
+                </li>
 
-          <div class="completed-items govuk-!-margin-top-5">
-            <h5 class="govuk-heading-m">Completed</h4>
-              <div>
-                <span class="completed-task"></span>
+              </ul>
+            </li>
 
-                <h6 class="govuk-heading-s completed-task-label">Your hearing details</h6>
-                  <p class="govuk-body completed-task-body"><b>29 February 2022</b> - Hearing listed</p>
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">Decisions from the tribunal</span>
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a style="pointer-events: none; text-decoration: none" aria-describedby="View all judgments">
+                      View all judgments
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--grey dashboard-tags" id="eligibility-status">Not available yet</strong>
+                </li>
 
-                <h7 class="govuk-heading-s completed-task-body">Useful documents</h7>
-                  <a class="govuk-body govuk-link completed-task-body" href="#">Notice of hearing</a>
+              </ul>
+            </li>
 
-                <hr class="completed-section-border">
-              </div>
+            <li>
+              <h2 class="app-task-list__section">
+                <span class="app-task-list__section-number">Case documents</span>
+              </h2>
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="#" aria-describedby="      All documents">
+                      All documents
+                    </a>
+                  </span>
+                  <strong class="govuk-tag app-task-list__tag govuk-tag--blue dashboard-tags" id="eligibility-status">optional</strong>
+                </li>
 
-              <div>
-                <span class="completed-task"></span>
+              </ul>
+            </li>
 
-                <h6 class="govuk-heading-s completed-task-label">The respondent replied to the claim</h6>
-                  <p class="govuk-body completed-task-body"><b>25 February 2022</b> - Response received</p>
-
-                <h7 class="govuk-heading-s completed-task-body">Useful documents</h7>
-                  <a class="govuk-body govuk-link completed-task-body" href="#">ET3 form</a>
-
-                <hr class="completed-section-border">
-              </div>
-
-              <div>
-                <span class="completed-task"></span>
-
-                <h6 class="govuk-heading-s completed-task-label">Your ET1 form was submitted</h6>
-                  <p class="govuk-body completed-task-body"><b>25 January 2022</b> - Form received</p>
-
-                <h7 class="govuk-heading-s completed-task-body">Useful documents</h7>
-                  <a class="govuk-body govuk-link completed-task-body" href="#">ET1 form</a>
-
-                <hr class="completed-section-border">
-              </div>
-
-          </div>
-
+          </ol>
         </div>
-
         <!-- Sidebar -->
         <div class="govuk-grid-column-one-third">
           <div>
             <hr class="overview-border">
-            <h2 class="govuk-heading-s">I want to...</h2>
+            <h2 class="govuk-heading-s govuk-!-margin-top-4">I want to...</h2>
               <p class="govuk-body">
-                <a href="#">Amend personal details</a><br>
-                <a href="#">Postpone a hearing</a><br>
-                <a href="#">Amend my claim</a><br>
+                <a href="#">Contact the tribunal about my case</a><br><br>
+                <a href="#">Find legal advice</a><br><br>
+                <a href="#">Help with tribunal terms</a><br><br>
               </p>
-          </div>
 
-          <div>
-            <hr class="section-border">
-            <h3 class="govuk-heading-s govuk-!-margin-top-3">Contact us for help</h2>
-              <p class="govuk-body">Ask a question or get help in your language. <br><br>
-                Telephone: <br>
-                0300 123 1024<br>
-                0300 303 5176 (Welsh language)<br>
-                0300 790 6234 (Scotland)<br><br>
-                Textphone:<br>
-                18001 0300 123 1024 (England and Wales)<br>
-                18001 0300 790 6234 (Scotland)<br><br>
-                Monday to Friday, 9am to 5pm <br><br>
-                <a href="#"> Find out about call charges (opens in a new window)</a>
-
-              </p>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Call our contact centre
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                Call the Employment Tribunal customer contact centre if you have any questions about your claim. They cannot give you legal advice or process any updates to your case.
+                <br><br>
+                If you want to help processing case updates,<a href="#"> contact the tribunal directly</a>.
+                <br><br>
+                <b>England & Wales</b>
+                Telephone: 0300 123 1024
+                Textphone: 18001 0300 123 1024
+                <br><br>
+                <b>Welsh language</b>
+                Telephone: 0300 303 5176
+                <br><br>
+                <b>Scotland</b>
+                Telephone: 0300 790 6234
+                Textphone: 18001 0300 790 6234
+                <br><br>
+                Monday to Thursday, 8.30am to 5pm.
+                Friday, 8.30am to 4pm.
+                The centre does not open on bank holidays.
+                Find out about call charges (opens in new tab)
+              </div>
+            </details>
           </div>
         </div>
       </div>

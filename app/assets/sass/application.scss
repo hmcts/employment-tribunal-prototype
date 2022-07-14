@@ -114,5 +114,13 @@ $govuk-assets-path: '/govuk/assets/';
   border-radius: 50%;
   display: inline-block;
   color: black;
-  text-align: center; 
+  text-align: center;
+}
+
+.dashboard-tags {
+  text-transform: lowercase;
+}
+
+.dashboard-tags::first-letter {
+  text-transform: capitalize;
 }
